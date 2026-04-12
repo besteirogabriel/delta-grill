@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delta Grill - Representantes</title>
+    <meta name="description" content="Encontre representantes Delta Grill por estado e cidade.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
+    <style>
+        :root {
+            --primary-blue: #2D3192;
+            --primary-orange: #F38321;
+            --dark-blue: #1a1d5c;
+            --gray-100: #f8f9fa;
+            --gray-200: #e9ecef;
+            --gray-600: #6c757d;
+            --gray-800: #343a40;
+            --white: #ffffff;
+            --shadow-md: 0 6px 18px rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--gray-800);
+            background: var(--white);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Anek Bangla', sans-serif;
+        }
+
+        .page-header {
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-200);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .page-header .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo img {
+            height: 64px;
+            width: auto;
+        }
+
+        .header-actions a {
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
+        .hero {
+            padding: 40px 20px 20px;
+            background: linear-gradient(160deg, rgba(45,49,146,0.08), rgba(243,131,33,0.05));
+        }
+
+        .hero .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 10px;
+            color: var(--primary-blue);
+        }
+
+        .hero p {
+            color: var(--gray-600);
+            max-width: 700px;
+        }
+
+        .filters {
+            max-width: 1200px;
+            margin: 20px auto 0;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 2fr;
+            gap: 16px;
+        }
+
+        .filter-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 14px;
+            padding: 14px 16px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .filter-card label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--gray-600);
+            margin-bottom: 6px;
+        }
+
+        select, input {
+            width: 100%;
+            padding: 10px 12px;
+            border-radius: 10px;
+            border: 1px solid var(--gray-200);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .map-section {
+            max-width: 1200px;
+            margin: 20px auto 60px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+        }
+
+        #map {
+            height: 520px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+
+        .results {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 20px;
+            padding: 18px;
+            box-shadow: var(--shadow-md);
+            height: 520px;
+            overflow-y: auto;
+        }
+
+        .result-item {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .result-item:last-child {
+            border-bottom: none;
+        }
+
+        .result-item h4 {
+            font-size: 1rem;
+            color: var(--primary-blue);
+            margin-bottom: 6px;
+        }
+
+        .result-item span {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--gray-600);
+        }
+
+        @media (max-width: 960px) {
+            .filters {
+                grid-template-columns: 1fr;
+            }
+
+            .map-section {
+                grid-template-columns: 1fr;
+            }
+
+            #map, .results {
+                height: 420px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="page-header">
+        <div class="container">
+            <div class="logo">
+                <img src="assets/logo_sem_bg.png" alt="Delta Grill">
+            </div>
+            <div class="header-actions">
+                <a href="index.html">Voltar ao site</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Representantes Delta Grill</h1>
+            <p>Encontre o representante mais próximo usando o mapa e filtre por estado e cidade.</p>
+        </div>
+    </section>
+
+    <div class="filters">
+        <div class="filter-card">
+            <label for="stateSelect">Estado</label>
+            <select id="stateSelect">
+                <option value="">Todos os estados</option>
+            </select>
+        </div>
+        <div class="filter-card">
+            <label for="citySelect">Cidade</label>
+            <select id="citySelect" disabled>
+                <option value="">Todas as cidades</option>
+            </select>
+        </div>
+        <div class="filter-card">
+            <label for="searchInput">Pesquisar por nome</label>
+            <input id="searchInput" type="text" placeholder="Digite o nome do representante">
+        </div>
+    </div>
+
+    <section class="map-section">
+        <div id="map"></div>
+        <div class="results" id="results"></div>
+    </section>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script>
+        const representatives = [
+            { name: 'Delta Grill Caxias do Sul', state: 'RS', city: 'Caxias do Sul', phone: '(54) 3538-9778', lat: -29.1678, lng: -51.1794 },
+            { name: 'Representante Porto Alegre', state: 'RS', city: 'Porto Alegre', phone: '(51) 3333-0000', lat: -30.0346, lng: -51.2177 },
+            { name: 'Representante São Paulo', state: 'SP', city: 'São Paulo', phone: '(11) 9999-0000', lat: -23.5505, lng: -46.6333 },
+            { name: 'Representante Curitiba', state: 'PR', city: 'Curitiba', phone: '(41) 3333-0000', lat: -25.4284, lng: -49.2733 }
+        ];
+
+        const map = L.map('map').setView([-14.2350, -51.9253], 4);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            attribution: '&copy; OpenStreetMap'
+        }).addTo(map);
+
+        const markersLayer = L.layerGroup().addTo(map);
+        const stateSelect = document.getElementById('stateSelect');
+        const citySelect = document.getElementById('citySelect');
+        const searchInput = document.getElementById('searchInput');
+        const results = document.getElementById('results');
+
+        const unique = (list) => Array.from(new Set(list)).sort();
+
+        const populateStates = () => {
+            unique(representatives.map(rep => rep.state)).forEach(state => {
+                const opt = document.createElement('option');
+                opt.value = state;
+                opt.textContent = state;
+                stateSelect.appendChild(opt);
+            });
+        };
+
+        const populateCities = (state) => {
+            citySelect.innerHTML = '<option value="">Todas as cidades</option>';
+            const cities = unique(representatives.filter(rep => !state || rep.state === state).map(rep => rep.city));
+            cities.forEach(city => {
+                const opt = document.createElement('option');
+                opt.value = city;
+                opt.textContent = city;
+                citySelect.appendChild(opt);
+            });
+            citySelect.disabled = cities.length === 0;
+        };
+
+        const renderResults = (items) => {
+            results.innerHTML = '';
+            if (items.length === 0) {
+                results.innerHTML = '<p>Nenhum representante encontrado.</p>';
+                return;
+            }
+            items.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'result-item';
+                card.innerHTML = `
+                    <h4>${item.name}</h4>
+                    <span>${item.city} - ${item.state}</span>
+                    <span>${item.phone}</span>
+                `;
+                card.addEventListener('click', () => {
+                    map.setView([item.lat, item.lng], 12, { animate: true });
+                });
+                results.appendChild(card);
+            });
+        };
+
+        const renderMarkers = (items) => {
+            markersLayer.clearLayers();
+            items.forEach(item => {
+                const marker = L.marker([item.lat, item.lng]).addTo(markersLayer);
+                marker.bindPopup(`<strong>${item.name}</strong><br>${item.city} - ${item.state}<br>${item.phone}`);
+            });
+            if (items.length > 0) {
+                const group = L.featureGroup(markersLayer.getLayers());
+                map.fitBounds(group.getBounds().pad(0.2));
+            }
+        };
+
+        const applyFilters = () => {
+            const state = stateSelect.value;
+            const city = citySelect.value;
+            const query = searchInput.value.toLowerCase();
+
+            const filtered = representatives.filter(rep => {
+                const matchState = !state || rep.state === state;
+                const matchCity = !city || rep.city === city;
+                const matchQuery = !query || rep.name.toLowerCase().includes(query);
+                return matchState && matchCity && matchQuery;
+            });
+
+            renderResults(filtered);
+            renderMarkers(filtered);
+        };
+
+        stateSelect.addEventListener('change', () => {
+            populateCities(stateSelect.value);
+            applyFilters();
+        });
+
+        citySelect.addEventListener('change', applyFilters);
+        searchInput.addEventListener('input', applyFilters);
+
+        populateStates();
+        populateCities('');
+        applyFilters();
+    </script>
+</body>
+</html>
