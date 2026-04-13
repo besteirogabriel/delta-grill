@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delta Grill | Pos-Vendas</title>
+    <meta name="description" content="Pagina de pos-vendas Delta Grill com assistencia tecnica, manuais, pecas e perguntas frequentes.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+    <link rel="stylesheet" href="assets/internal-pages.css">
+</head>
+<body>
+    <header class="page-header">
+        <div class="container">
+            <a class="page-logo" href="index.html"><img src="assets/logo_sem_bg.png" alt="Delta Grill"></a>
+            <nav class="page-nav">
+                <a href="index.html">Inicio</a>
+                <a href="produtos.html">Produtos</a>
+                <a href="pos-vendas.html" class="is-active">Pos-Vendas</a>
+                <a href="representantes.html">Representantes</a>
+                <a href="novidades.html">Novidades</a>
+                <a href="index.html#contato">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <div class="hero-panel">
+                    <div class="hero-grid">
+                        <div>
+                            <span class="hero-eyebrow"><i class="fas fa-headset"></i> Suporte e relacionamento</span>
+                            <h1>Pos-vendas pronto para crescer com a rede Delta Grill.</h1>
+                            <p>A pagina organiza assistencia tecnica, manuais, pecas de reposicao e perguntas frequentes. Ela fica pronta para receber mais materiais sem refazer a navegacao.</p>
+                            <div class="anchor-nav">
+                                <a href="#assistencia">Assistencia tecnica</a>
+                                <a href="#manuais">Manuais</a>
+                                <a href="#pecas">Pecas</a>
+                                <a href="#faq">FAQ</a>
+                            </div>
+                        </div>
+                        <div class="hero-media">
+                            <img src="assets/images/00133.jpg" alt="Marca Delta Grill">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section" id="assistencia">
+            <div class="container">
+                <div class="section-card">
+                    <div class="section-heading">
+                        <div>
+                            <span class="section-tag"><i class="fas fa-map-location-dot"></i> Assistencia tecnica</span>
+                            <h2>Filtro por estado e cidade</h2>
+                            <p>Enquanto a rede completa nao e publicada, o mapa usa o atendimento da fabrica como ponto central. A mesma estrutura permite crescer estado por estado depois.</p>
+                        </div>
+                    </div>
+                    <div class="directory-layout">
+                        <div class="directory-map-shell">
+                            <div class="directory-filters">
+                                <div class="filter-panel">
+                                    <label for="assistencia-state">Estado</label>
+                                    <select id="assistencia-state"></select>
+                                </div>
+                                <div class="filter-panel">
+                                    <label for="assistencia-city">Cidade</label>
+                                    <select id="assistencia-city"></select>
+                                </div>
+                                <div class="filter-panel">
+                                    <label for="assistencia-search">Pesquisar</label>
+                                    <input id="assistencia-search" type="text" placeholder="Nome, cidade ou observacao">
+                                </div>
+                            </div>
+                            <div class="directory-map" id="assistencia-map"></div>
+                        </div>
+                        <aside class="directory-sidebar" id="assistencia-results"></aside>
+                    </div>
+                    <p class="mini-note">Se o cliente preferir uma pagina focada apenas em assistencia, ela ja existe tambem em <a href="assistencia.html">assistencia.html</a>.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section" id="manuais">
+            <div class="container">
+                <div class="section-card">
+                    <div class="section-heading">
+                        <div>
+                            <span class="section-tag"><i class="fas fa-book"></i> Biblioteca tecnica</span>
+                            <h2>Manuais de instrucao</h2>
+                            <p>O cliente comentou que quer manuais de todos os produtos. Como os PDFs ainda nao estao no repositorio, a pagina foi preparada por familia para receber os arquivos sem refazer o layout.</p>
+                        </div>
+                    </div>
+                    <div class="manual-grid">
+                        <article class="manual-card"><span class="status-badge pending">Aguardando PDF</span><h3>Serras fita</h3><p>Espaco reservado para os manuais da linha de corte e suas variacoes por codigo.</p></article>
+                        <article class="manual-card"><span class="status-badge pending">Aguardando PDF</span><h3>Misturadores</h3><p>Area pronta para receber os manuais dos modelos 1079, 1080, 1081 e futuras variantes.</p></article>
+                        <article class="manual-card"><span class="status-badge pending">Aguardando PDF</span><h3>Moedores e raladores</h3><p>Bloco preparado para os manuais das linhas de processamento mais procuradas.</p></article>
+                        <article class="manual-card"><span class="status-badge pending">Aguardando PDF</span><h3>Panelas mexedoras</h3><p>Secao reservada para os codigos 1068, 1082, 1083, 1084, 1085 e 1086.</p></article>
+                        <article class="manual-card"><span class="status-badge pending">Aguardando PDF</span><h3>Fornos e aquecimento</h3><p>Area pronta para a documentacao assim que as linhas forem liberadas comercialmente.</p></article>
+                        <article class="manual-card"><span class="status-badge ready">Disponivel</span><h3>Catalogo completo</h3><p>Enquanto os manuais individuais sao consolidados, o catalogo completo ja fica disponivel para apoio comercial e navegacao.</p><div class="manual-actions"><a href="downloads/Delta_Grill_Catalogo_2023.pdf" class="btn btn-outline" download><i class="fas fa-download"></i> Baixar catalogo</a></div></article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section" id="pecas">
+            <div class="container">
+                <div class="cta-banner">
+                    <h3>Pecas de reposicao com atendimento direto.</h3>
+                    <p>Conforme o alinhamento do cliente, o caminho de pecas cai direto no WhatsApp do contato oficial da Delta Grill. Se depois quiserem destacar a Diana nominalmente, a CTA ja esta preparada para isso.</p>
+                    <div class="cta-actions">
+                        <a href="https://wa.me/5554996068328?text=Ola!%20Gostaria%20de%20comprar%20pecas%20de%20reposicao%20Delta%20Grill." class="btn btn-secondary" target="_blank" rel="noopener">
+                            <i class="fab fa-whatsapp"></i>
+                            Solicitar pecas
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section" id="faq">
+            <div class="container">
+                <div class="section-card">
+                    <div class="section-heading">
+                        <div>
+                            <span class="section-tag"><i class="fas fa-circle-question"></i> Perguntas frequentes</span>
+                            <h2>Area editorial pronta para as duvidas mais pedidas</h2>
+                            <p>Como a Delta Grill ainda vai elaborar esse texto, a pagina foi estruturada com os temas mais provaveis para facilitar a proxima entrega.</p>
+                        </div>
+                    </div>
+                    <div class="support-grid">
+                        <article class="support-card"><h3>Garantia e cobertura</h3><p>Espaco reservado para explicar prazo, acionamento e condicoes da garantia de fabrica.</p></article>
+                        <article class="support-card"><h3>Voltagem e instalacao</h3><p>Espaco reservado para duvidas sobre chave seletora, fase e cuidados basicos de instalacao.</p></article>
+                        <article class="support-card"><h3>Uso de manuais</h3><p>Espaco reservado para orientar como localizar o manual correto para cada produto.</p></article>
+                        <article class="support-card"><h3>Pecas e manutencao</h3><p>Espaco reservado para regras de compra, identificacao de pecas e abertura de suporte.</p></article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-simple">
+        <div class="container">
+            <span>&copy; 2026 Delta Grill. Pos-vendas em consolidacao.</span>
+            <nav>
+                <a href="index.html">Inicio</a>
+                <a href="produtos.html">Produtos</a>
+                <a href="representantes.html">Representantes</a>
+                <a href="novidades.html">Novidades</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="assets/map-directory.js"></script>
+    <script>
+        initDirectoryPage({
+            mapId: "assistencia-map",
+            stateSelectId: "assistencia-state",
+            citySelectId: "assistencia-city",
+            searchInputId: "assistencia-search",
+            resultsId: "assistencia-results",
+            emptyMessage: "Nenhuma assistencia cadastrada para esse filtro. Enquanto a rede completa nao e publicada, o atendimento segue centralizado na fabrica.",
+            data: [
+                {
+                    name: "Atendimento tecnico de fabrica",
+                    state: "RS",
+                    city: "Caxias do Sul",
+                    phone: "(54) 3538-9778",
+                    lat: -29.1678,
+                    lng: -51.1794,
+                    note: "Ponto inicial de suporte enquanto a rede autorizada por estado e consolidada."
+                }
+            ]
+        });
+    </script>
+</body>
+</html>
