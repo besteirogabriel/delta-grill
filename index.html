@@ -1881,6 +1881,67 @@
             transform: translateY(-50%);
         }
 
+        .product-vitrine-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 18px;
+            margin-top: 28px;
+        }
+
+        .product-figure,
+        .line-gallery-card {
+            background: var(--white);
+            border: 1px solid rgba(45, 49, 146, 0.08);
+            border-radius: 20px;
+            padding: 14px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .product-figure img,
+        .line-gallery-card img {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: contain;
+            background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(45,49,146,0.03));
+            border-radius: 16px;
+            padding: 10px;
+        }
+
+        .product-figure figcaption,
+        .line-gallery-copy {
+            display: grid;
+            gap: 6px;
+            padding: 12px 4px 4px;
+        }
+
+        .product-figure strong,
+        .line-gallery-card h4 {
+            color: var(--primary-blue);
+            font-size: 1rem;
+        }
+
+        .product-figure span,
+        .line-gallery-card p,
+        .gallery-note {
+            color: var(--gray-600);
+            font-size: 0.92rem;
+        }
+
+        .line-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+            margin-top: 24px;
+        }
+
+        .line-gallery-card h4 {
+            margin-bottom: 4px;
+        }
+
+        .gallery-note {
+            margin-top: 18px;
+        }
+
         .company-panels,
         .story-grid {
             grid-template-columns: repeat(3, 1fr);
@@ -2054,6 +2115,14 @@
                 grid-template-columns: 1fr;
             }
 
+            .product-vitrine-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .line-gallery {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
             .nav {
                 display: none;
             }
@@ -2117,6 +2186,11 @@
             .support-grid,
             .manual-cards,
             .news-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-vitrine-grid,
+            .line-gallery {
                 grid-template-columns: 1fr;
             }
 
@@ -2455,12 +2529,12 @@
                         </div>
                         <div class="catalog-showcase">
                             <div class="catalog-showcase-media">
-                                <img src="assets/images/GOB00120_Grande.jpeg" alt="Linha de serras fita Delta Grill">
-                                <img src="assets/images/GOB00111_Grande.jpeg" alt="Equipamentos Delta Grill para corte e processamento">
+                                <img src="assets/images/catalog-vitrine/dg-1026.jpg" alt="Serra fita Delta Grill DG 1026">
+                                <img src="assets/images/catalog-vitrine/dg-1044.jpg" alt="Serra fita Delta Grill DG 1044">
                             </div>
                             <div class="catalog-showcase-copy">
                                 <h4>Modelos incluídos na vitrine</h4>
-                                <p class="catalog-note">As fotos finais por item podem ser refinadas assim que o acervo individual do catálogo for disponibilizado. Por enquanto, a linha já está organizada por código e pronta para navegação.</p>
+                                <p class="catalog-note">As fotos por código recebidas no arquivo compactado já foram incorporadas à vitrine. Mantivemos a linha organizada por modelo e sinalizamos separadamente o que ainda depende de material complementar.</p>
                                 <div class="model-chip-grid">
                                     <span class="model-chip">DG 1026</span>
                                     <span class="model-chip">DG 1027</span>
@@ -2498,6 +2572,149 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="product-vitrine-grid">
+                            <figure class="product-figure animate-on-scroll">
+                                <img src="assets/images/catalog-vitrine/dg-1000.jpg" alt="Serra fita Delta Grill DG 1000" loading="lazy">
+                                <figcaption>
+                                    <strong>DG 1000</strong>
+                                    <span>Foto principal recebida para a vitrine da linha de corte.</span>
+                                </figcaption>
+                            </figure>
+                            <figure class="product-figure animate-on-scroll">
+                                <img src="assets/images/catalog-vitrine/dg-1003.jpg" alt="Serra fita Delta Grill DG 1003" loading="lazy">
+                                <figcaption>
+                                    <strong>DG 1003</strong>
+                                    <span>Foto principal recebida para a vitrine da linha de corte.</span>
+                                </figcaption>
+                            </figure>
+                            <figure class="product-figure animate-on-scroll">
+                                <img src="assets/images/catalog-vitrine/dg-1024.jpg" alt="Serra fita Delta Grill DG 1024" loading="lazy">
+                                <figcaption>
+                                    <strong>DG 1024</strong>
+                                    <span>Foto principal recebida para a vitrine da linha de corte.</span>
+                                </figcaption>
+                            </figure>
+                            <figure class="product-figure animate-on-scroll">
+                                <img src="assets/images/catalog-vitrine/dg-1025.jpg" alt="Serra fita Delta Grill DG 1025" loading="lazy">
+                                <figcaption>
+                                    <strong>DG 1025</strong>
+                                    <span>Foto principal recebida para a vitrine da linha de corte.</span>
+                                </figcaption>
+                            </figure>
+                            <figure class="product-figure animate-on-scroll">
+                                <img src="assets/images/catalog-vitrine/dg-1026.jpg" alt="Serra fita Delta Grill DG 1026" loading="lazy">
+                                <figcaption>
+                                    <strong>DG 1026</strong>
+                                    <span>Foto principal recebida para a vitrine da linha de corte.</span>
+                                </figcaption>
+                            </figure>
+                            <figure class="product-figure animate-on-scroll">
+                                <img src="assets/images/catalog-vitrine/dg-1027.jpg" alt="Serra fita Delta Grill DG 1027" loading="lazy">
+                                <figcaption>
+                                    <strong>DG 1027</strong>
+                                    <span>Foto principal recebida para a vitrine da linha de corte.</span>
+                                </figcaption>
+                            </figure>
+                            <figure class="product-figure animate-on-scroll">
+                                <img src="assets/images/catalog-vitrine/dg-1031.jpg" alt="Serra fita Delta Grill DG 1031" loading="lazy">
+                                <figcaption>
+                                    <strong>DG 1031</strong>
+                                    <span>Foto principal recebida para a vitrine da linha de corte.</span>
+                                </figcaption>
+                            </figure>
+                            <figure class="product-figure animate-on-scroll">
+                                <img src="assets/images/catalog-vitrine/dg-1032.jpg" alt="Serra fita Delta Grill DG 1032" loading="lazy">
+                                <figcaption>
+                                    <strong>DG 1032</strong>
+                                    <span>Foto principal recebida para a vitrine da linha de corte.</span>
+                                </figcaption>
+                            </figure>
+                            <figure class="product-figure animate-on-scroll">
+                                <img src="assets/images/catalog-vitrine/dg-1033.jpg" alt="Serra fita Delta Grill DG 1033" loading="lazy">
+                                <figcaption>
+                                    <strong>DG 1033</strong>
+                                    <span>Foto principal recebida para a vitrine da linha de corte.</span>
+                                </figcaption>
+                            </figure>
+                            <figure class="product-figure animate-on-scroll">
+                                <img src="assets/images/catalog-vitrine/dg-1034.jpg" alt="Serra fita Delta Grill DG 1034" loading="lazy">
+                                <figcaption>
+                                    <strong>DG 1034</strong>
+                                    <span>Foto principal recebida para a vitrine da linha de corte.</span>
+                                </figcaption>
+                            </figure>
+                            <figure class="product-figure animate-on-scroll">
+                                <img src="assets/images/catalog-vitrine/dg-1035.jpg" alt="Serra fita Delta Grill DG 1035" loading="lazy">
+                                <figcaption>
+                                    <strong>DG 1035</strong>
+                                    <span>Foto principal recebida para a vitrine da linha de corte.</span>
+                                </figcaption>
+                            </figure>
+                            <figure class="product-figure animate-on-scroll">
+                                <img src="assets/images/catalog-vitrine/dg-1036.jpg" alt="Serra fita Delta Grill DG 1036" loading="lazy">
+                                <figcaption>
+                                    <strong>DG 1036</strong>
+                                    <span>Foto principal recebida para a vitrine da linha de corte.</span>
+                                </figcaption>
+                            </figure>
+                            <figure class="product-figure animate-on-scroll">
+                                <img src="assets/images/catalog-vitrine/dg-1037.jpg" alt="Serra fita Delta Grill DG 1037" loading="lazy">
+                                <figcaption>
+                                    <strong>DG 1037</strong>
+                                    <span>Foto principal recebida para a vitrine da linha de corte.</span>
+                                </figcaption>
+                            </figure>
+                            <figure class="product-figure animate-on-scroll">
+                                <img src="assets/images/catalog-vitrine/dg-1038.jpg" alt="Serra fita Delta Grill DG 1038" loading="lazy">
+                                <figcaption>
+                                    <strong>DG 1038</strong>
+                                    <span>Foto principal recebida para a vitrine da linha de corte.</span>
+                                </figcaption>
+                            </figure>
+                            <figure class="product-figure animate-on-scroll">
+                                <img src="assets/images/catalog-vitrine/dg-1039.jpg" alt="Serra fita Delta Grill DG 1039" loading="lazy">
+                                <figcaption>
+                                    <strong>DG 1039</strong>
+                                    <span>Foto principal recebida para a vitrine da linha de corte.</span>
+                                </figcaption>
+                            </figure>
+                            <figure class="product-figure animate-on-scroll">
+                                <img src="assets/images/catalog-vitrine/dg-1040.jpg" alt="Serra fita Delta Grill DG 1040" loading="lazy">
+                                <figcaption>
+                                    <strong>DG 1040</strong>
+                                    <span>Foto principal recebida para a vitrine da linha de corte.</span>
+                                </figcaption>
+                            </figure>
+                            <figure class="product-figure animate-on-scroll">
+                                <img src="assets/images/catalog-vitrine/dg-1041.jpg" alt="Serra fita Delta Grill DG 1041" loading="lazy">
+                                <figcaption>
+                                    <strong>DG 1041</strong>
+                                    <span>Foto principal recebida para a vitrine da linha de corte.</span>
+                                </figcaption>
+                            </figure>
+                            <figure class="product-figure animate-on-scroll">
+                                <img src="assets/images/catalog-vitrine/dg-1042.jpg" alt="Serra fita Delta Grill DG 1042" loading="lazy">
+                                <figcaption>
+                                    <strong>DG 1042</strong>
+                                    <span>Foto principal recebida para a vitrine da linha de corte.</span>
+                                </figcaption>
+                            </figure>
+                            <figure class="product-figure animate-on-scroll">
+                                <img src="assets/images/catalog-vitrine/dg-1043.jpg" alt="Serra fita Delta Grill DG 1043" loading="lazy">
+                                <figcaption>
+                                    <strong>DG 1043</strong>
+                                    <span>Foto principal recebida para a vitrine da linha de corte.</span>
+                                </figcaption>
+                            </figure>
+                            <figure class="product-figure animate-on-scroll">
+                                <img src="assets/images/catalog-vitrine/dg-1044.jpg" alt="Serra fita Delta Grill DG 1044" loading="lazy">
+                                <figcaption>
+                                    <strong>DG 1044</strong>
+                                    <span>Foto principal recebida para a vitrine da linha de corte.</span>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <p class="gallery-note">As imagens foram associadas pelo nome das pastas enviadas no ZIP. Ainda aguardamos fotos dos modelos DG 1047, DG 1048 e DG 1088 para completar esta família.</p>
                     </article>
 
                     <article class="catalog-panel animate-on-scroll" id="amaciadores">
@@ -2567,6 +2784,16 @@
                             <span class="model-chip">DG 1050</span>
                             <span class="model-chip">DG 1051</span>
                         </div>
+                        <div class="line-gallery">
+                            <article class="line-gallery-card animate-on-scroll">
+                                <img src="assets/images/catalog-vitrine/moedor-boca-22.jpg" alt="Moedor de carne Delta Grill da linha boca 22" loading="lazy">
+                                <div class="line-gallery-copy">
+                                    <span class="spec-code">Linha visual</span>
+                                    <h4>Moedor boca 22</h4>
+                                    <p>Imagem recebida no pacote do cliente para reforçar a vitrine da linha de moedores.</p>
+                                </div>
+                            </article>
+                        </div>
                     </article>
 
                     <article class="catalog-panel animate-on-scroll" id="ensacadeiras">
@@ -2590,6 +2817,57 @@
                             <span class="model-chip">DG 1085</span>
                             <span class="model-chip">DG 1086</span>
                         </div>
+                        <div class="line-gallery">
+                            <article class="line-gallery-card animate-on-scroll">
+                                <img src="assets/images/catalog-vitrine/misturadora-azul.jpg" alt="Panela mexedora Delta Grill em versão azul" loading="lazy">
+                                <div class="line-gallery-copy">
+                                    <span class="spec-code">Vitrine</span>
+                                    <h4>Versão azul</h4>
+                                    <p>Imagem recebida no pacote da linha de panelas mexedoras.</p>
+                                </div>
+                            </article>
+                            <article class="line-gallery-card animate-on-scroll">
+                                <img src="assets/images/catalog-vitrine/misturadora-diamantado.jpg" alt="Panela mexedora Delta Grill em versão diamantada" loading="lazy">
+                                <div class="line-gallery-copy">
+                                    <span class="spec-code">Vitrine</span>
+                                    <h4>Versão diamantada</h4>
+                                    <p>Imagem recebida no pacote da linha de panelas mexedoras.</p>
+                                </div>
+                            </article>
+                            <article class="line-gallery-card animate-on-scroll">
+                                <img src="assets/images/catalog-vitrine/misturadora-laranja.jpg" alt="Panela mexedora Delta Grill em versão laranja" loading="lazy">
+                                <div class="line-gallery-copy">
+                                    <span class="spec-code">Vitrine</span>
+                                    <h4>Versão laranja</h4>
+                                    <p>Imagem recebida no pacote da linha de panelas mexedoras.</p>
+                                </div>
+                            </article>
+                            <article class="line-gallery-card animate-on-scroll">
+                                <img src="assets/images/catalog-vitrine/misturadora-preto.jpg" alt="Panela mexedora Delta Grill em versão preta" loading="lazy">
+                                <div class="line-gallery-copy">
+                                    <span class="spec-code">Vitrine</span>
+                                    <h4>Versão preta</h4>
+                                    <p>Imagem recebida no pacote da linha de panelas mexedoras.</p>
+                                </div>
+                            </article>
+                            <article class="line-gallery-card animate-on-scroll">
+                                <img src="assets/images/catalog-vitrine/misturadora-rosa.jpg" alt="Panela mexedora Delta Grill em versão rosa" loading="lazy">
+                                <div class="line-gallery-copy">
+                                    <span class="spec-code">Vitrine</span>
+                                    <h4>Versão rosa</h4>
+                                    <p>Imagem recebida no pacote da linha de panelas mexedoras.</p>
+                                </div>
+                            </article>
+                            <article class="line-gallery-card animate-on-scroll">
+                                <img src="assets/images/catalog-vitrine/misturadora-vermelha.jpg" alt="Panela mexedora Delta Grill em versão vermelha" loading="lazy">
+                                <div class="line-gallery-copy">
+                                    <span class="spec-code">Vitrine</span>
+                                    <h4>Versão vermelha</h4>
+                                    <p>Imagem recebida no pacote da linha de panelas mexedoras.</p>
+                                </div>
+                            </article>
+                        </div>
+                        <p class="gallery-note">As fotos desta linha vieram organizadas por cor no ZIP. O cruzamento final entre cada acabamento e o código comercial pode ser refinado depois, sem perder a vitrine já publicada.</p>
                     </article>
 
                     <article class="catalog-panel animate-on-scroll" id="raladores">
@@ -2600,6 +2878,16 @@
                         <div class="model-chip-grid">
                             <span class="model-chip">DG 1070</span>
                             <span class="model-chip">DG 1071</span>
+                        </div>
+                        <div class="line-gallery">
+                            <article class="line-gallery-card animate-on-scroll">
+                                <img src="assets/images/catalog-vitrine/ralador.jpg" alt="Ralador Delta Grill da linha DG 1070 e DG 1071" loading="lazy">
+                                <div class="line-gallery-copy">
+                                    <span class="spec-code">Linha visual</span>
+                                    <h4>Raladores Delta Grill</h4>
+                                    <p>Imagem recebida para apoiar a vitrine dos modelos DG 1070 e DG 1071.</p>
+                                </div>
+                            </article>
                         </div>
                     </article>
                 </div>
