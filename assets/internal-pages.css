@@ -262,6 +262,7 @@ img {
 .support-card,
 .notice-box,
 .placeholder-box,
+.info-box,
 .code-item {
     background: var(--white);
     border: 1px solid rgba(45, 49, 146, 0.08);
@@ -311,6 +312,7 @@ img {
 .section-heading p,
 .notice-box p,
 .placeholder-box p,
+.info-box p,
 .product-detail-card p,
 .manual-card p,
 .news-card p,
@@ -348,13 +350,15 @@ img {
 }
 
 .notice-box,
-.placeholder-box {
+.placeholder-box,
+.info-box {
     border-radius: var(--radius-sm);
     padding: 18px 20px;
 }
 
 .notice-box strong,
-.placeholder-box strong {
+.placeholder-box strong,
+.info-box strong {
     color: var(--primary-blue);
 }
 
