@@ -34,6 +34,7 @@ jobs:
           cp *.html Delta_Grill_Comunicado_Atualizacoes.pdf _site/
           cp -R assets _site/assets
           cp -R downloads _site/downloads
+          cp -R produtos _site/produtos
           touch _site/.nojekyll
 
       - name: Upload Pages artifact
