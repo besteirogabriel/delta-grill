@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="assets/internal-pages.css">
 </head>
-<body>
+<body class="products-page">
     <header class="page-header">
         <div class="container">
             <a class="page-logo" href="index.html"><img src="assets/logo_sem_bg.png" alt="Delta Grill"></a>
@@ -21,7 +21,7 @@
                 <a href="pos-vendas.html">Pos-Vendas</a>
                 <a href="representantes.html">Representantes</a>
                 <a href="novidades.html">Novidades</a>
-                <a href="index.html#contato">Contato</a>
+                <a href="index.html#contato-rodape">Contato</a>
             </nav>
         </div>
     </header>
@@ -49,6 +49,7 @@
                                 <a href="#serras-fita">Serras fita</a>
                                 <a href="#misturadores">Misturadores</a>
                                 <a href="#moedores-carne">Moedores</a>
+                                <a href="#processadores-acougue">Processadores para açougue</a>
                                 <a href="#panelas-mexedoras">Panelas</a>
                                 <a href="#raladores">Raladores</a>
                                 <a href="#fornos-aquecimento">Fornos</a>
@@ -88,6 +89,16 @@
                             </div>
                         </div>
                     </div>
+                    <nav class="saw-size-nav" aria-label="Modelos de serras fita por tamanho e configuração">
+                        <a href="produtos/dg-1026.html">1,46m</a>
+                        <a href="produtos/dg-1039.html">1,46m com moedor</a>
+                        <a href="produtos/dg-1032.html">1,80m</a>
+                        <a href="produtos/dg-1000.html">1,80m com moedor</a>
+                        <a href="produtos/dg-1031.html">1,80m com mesa móvel</a>
+                        <a href="produtos/dg-1043.html">1,80m com mesa móvel e moedor</a>
+                        <a href="produtos/dg-1024.html">2,20m</a>
+                        <a href="produtos/dg-1025.html">2,82m</a>
+                    </nav>
                     <div class="code-grid">
                         <div class="code-item"><strong>1026</strong><span>Conforme catalogo</span></div>
                         <div class="code-item"><strong>1027</strong><span>Conforme catalogo</span></div>
@@ -117,19 +128,27 @@
             </div>
         </section>
 
-        <section class="page-section" id="amaciadores-carne">
+        <section class="page-section" id="processadores-acougue">
             <div class="container">
                 <div class="section-card">
                     <div class="section-heading">
                         <div>
-                            <span class="section-tag"><i class="fas fa-hammer"></i> Equipamentos de corte</span>
-                            <h2>Amaciadores de carne</h2>
-                            <p>Amaciadores para padronizar o preparo de carnes e trazer mais agilidade à rotina de açougues e cozinhas profissionais.</p>
+                            <span class="section-tag"><i class="fas fa-gears"></i> Processamento</span>
+                            <h2>Processadores para açougue</h2>
+                            <p>Amaciadores e ensacadeiras reunidos em uma única linha para facilitar a consulta dos equipamentos de preparo.</p>
                         </div>
                     </div>
-                    <div class="info-box">
-                        <strong>Sob consulta</strong>
-                        <p>Consulte a equipe Delta Grill para verificar configurações, disponibilidade e recomendação de uso.</p>
+                    <div class="product-detail-grid">
+                        <article class="product-detail-card">
+                            <div class="product-code">Amaciadores</div>
+                            <h3>Amaciadores de carne</h3>
+                            <p>Equipamentos para padronizar o preparo de carnes e trazer mais agilidade à rotina de açougues e cozinhas profissionais.</p>
+                        </article>
+                        <article class="product-detail-card">
+                            <div class="product-code">Ensacadeiras</div>
+                            <h3>Ensacadeiras</h3>
+                            <p>Equipamentos para produção de embutidos com mais controle, praticidade e padronização.</p>
+                        </article>
                     </div>
                 </div>
             </div>
@@ -206,7 +225,7 @@
             </div>
         </section>
 
-        <section class="page-section" id="ensacadeiras">
+        <section class="page-section" id="ensacadeiras" hidden>
             <div class="container">
                 <div class="section-card">
                     <div class="section-heading">
