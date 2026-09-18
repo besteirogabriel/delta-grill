@@ -378,6 +378,39 @@ img {
     object-fit: cover;
 }
 
+#serras-fita .media-card img {
+    transform: scale(1.2);
+    transform-origin: center 42%;
+}
+
+.product-media.product-media-gallery {
+    padding: 18px;
+}
+
+.product-media-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.product-media-view {
+    min-width: 0;
+    margin: 0;
+}
+
+.product-media-view img {
+    border-radius: 14px;
+    background: var(--white);
+}
+
+.product-media-view figcaption {
+    margin-top: 8px;
+    color: var(--gray-600);
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-align: center;
+}
+
 .info-stack,
 .faq-grid {
     display: grid;
@@ -659,6 +692,10 @@ a.code-item:focus-visible,
 }
 
 @media (max-width: 640px) {
+    .product-media-grid {
+        grid-template-columns: 1fr;
+    }
+
     .page-logo img {
         height: 60px;
     }
