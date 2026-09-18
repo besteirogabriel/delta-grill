@@ -415,6 +415,21 @@ img {
     text-align: center;
     border-radius: 18px;
     padding: 16px 14px;
+    text-decoration: none;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+a.code-item:hover,
+a.code-item:focus-visible,
+.product-card-link:hover,
+.product-card-link:focus-visible {
+    transform: translateY(-3px);
+    border-color: rgba(243, 131, 33, 0.42);
+    box-shadow: var(--shadow-md);
+}
+
+.code-item-unavailable {
+    opacity: 0.6;
 }
 
 .code-item strong {
@@ -442,6 +457,12 @@ img {
 .support-card {
     border-radius: 22px;
     padding: 22px;
+}
+
+.product-card-link {
+    color: inherit;
+    text-decoration: none;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .product-detail-card h3,
