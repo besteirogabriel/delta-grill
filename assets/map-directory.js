@@ -98,7 +98,7 @@
                 card.className = "directory-item";
                 card.innerHTML =
                     "<h4>" + item.name + "</h4>" +
-                    "<p>" + (item.note || "Atendimento disponivel para a regiao.") + "</p>" +
+                    "<p>" + (item.note || "Atendimento disponível para a região.") + "</p>" +
                     "<span>" + item.city + " - " + item.state + "</span>" +
                     "<span>" + item.phone + "</span>";
                 card.addEventListener("click", function () {

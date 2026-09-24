@@ -379,8 +379,73 @@ img {
 }
 
 #serras-fita .media-card img {
-    transform: scale(1.2);
-    transform-origin: center 42%;
+    display: block;
+    height: 380px;
+    object-fit: contain;
+    background: var(--white);
+    padding: 16px;
+}
+
+.saw-size-nav a[aria-current="true"] {
+    background: var(--primary-blue);
+    color: white;
+}
+
+.saw-size-nav a:focus-visible {
+    outline: 3px solid var(--primary-orange);
+    outline-offset: 3px;
+}
+
+.saw-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.saw-results [hidden] { display: none; }
+
+.saw-product {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 18px;
+    border: 1px solid rgba(45, 49, 146, 0.12);
+    border-radius: 18px;
+    background: white;
+    color: var(--primary-blue);
+    text-decoration: none;
+    box-shadow: var(--shadow-sm);
+}
+
+.saw-product:hover,
+.saw-product:focus-visible { outline: 2px solid var(--primary-orange); }
+
+.saw-product img {
+    width: 100%;
+    height: 230px;
+    object-fit: contain;
+}
+
+.saw-product strong { font-size: 1.15rem; }
+.saw-product span { color: var(--gray-600); }
+.saw-product .saw-product-action { margin-top: auto; color: var(--primary-blue); }
+.saw-photo-pending {
+    display: grid;
+    place-items: center;
+    height: 230px;
+    background: var(--gray-100);
+    border-radius: 12px;
+}
+.saw-results-summary { margin-top: 20px; color: var(--gray-600); }
+
+@media (max-width: 576px) {
+    .saw-size-nav { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .saw-size-nav a { padding: 10px; font-size: 0.85rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
 }
 
 .product-media.product-media-gallery {
