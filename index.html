@@ -505,6 +505,7 @@
         }
 
         .mobile-menu.active {
+            display: block;
             transform: translateX(0);
         }
 
@@ -2057,6 +2058,7 @@
 
         .story-grid {
             align-items: stretch;
+            grid-template-columns: 1fr;
         }
 
         .story-card strong {
@@ -2503,7 +2505,7 @@
                     </button>
                 </div>
 
-                <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Menu" aria-controls="mobileMenu" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -2976,21 +2978,13 @@
         <div class="container">
             <div class="section-header">
                 <p class="section-subtitle">Conteúdo institucional</p>
-                <h2 class="section-title">Nossa <span class="highlight">História</span> e Indicadores</h2>
+                <h2 class="section-title">Nossa <span class="highlight">História</span></h2>
                 <p class="section-lead">Há mais de 20 anos, a Delta Grill desenvolve equipamentos para quem precisa de produtividade, resistência e praticidade na rotina gastronômica.</p>
             </div>
             <div class="story-grid">
                 <article class="story-card animate-on-scroll">
                     <h3>Nossa história</h3>
                     <p>Com sede em Caxias do Sul, a Delta Grill combina desenvolvimento próprio, testes rigorosos e atenção ao acabamento para entregar equipamentos confiáveis ao mercado gastronômico.</p>
-                </article>
-                <article class="story-card animate-on-scroll">
-                    <h3>Números Delta Grill</h3>
-                    <p><strong>Experiência, clientes atendidos e equipamentos produzidos</strong> ficarão nesta faixa assim que o cliente confirmar os indicadores oficiais.</p>
-                </article>
-                <article class="story-card animate-on-scroll">
-                    <h3>Próximos ajustes</h3>
-                    <p>Quando o cliente enviar os números finais, esta área pode ser convertida facilmente em uma faixa de estatísticas com animação e destaque visual.</p>
                 </article>
             </div>
         </div>
@@ -3454,19 +3448,49 @@
 
         mobileToggle.addEventListener('click', function() {
             mobileMenu.classList.add('active');
+            mobileToggle.setAttribute('aria-expanded', 'true');
             document.body.style.overflow = 'hidden';
+            mobileMenuClose.focus();
         });
 
-        mobileMenuClose.addEventListener('click', function() {
+        function closeMobileMenu() {
             mobileMenu.classList.remove('active');
+            mobileToggle.setAttribute('aria-expanded', 'false');
             document.body.style.overflow = '';
+        }
+
+        mobileMenuClose.addEventListener('click', function() {
+            closeMobileMenu();
+            mobileToggle.focus();
+        });
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                closeMobileMenu();
+                mobileToggle.focus();
+            }
+            if (event.key === 'Tab' && mobileMenu.classList.contains('active')) {
+                const items = mobileMenu.querySelectorAll('button, a[href]');
+                const first = items[0];
+                const last = items[items.length - 1];
+                if (event.shiftKey && document.activeElement === first) {
+                    event.preventDefault();
+                    last.focus();
+                } else if (!event.shiftKey && document.activeElement === last) {
+                    event.preventDefault();
+                    first.focus();
+                }
+            }
+        });
+
+        window.addEventListener('resize', function() {
+            if (getComputedStyle(mobileToggle).display === 'none') closeMobileMenu();
         });
 
         // Close mobile menu on link click
         document.querySelectorAll('.mobile-menu-nav a').forEach(link => {
             link.addEventListener('click', function() {
-                mobileMenu.classList.remove('active');
-                document.body.style.overflow = '';
+                closeMobileMenu();
             });
         });
 
