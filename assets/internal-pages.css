@@ -563,6 +563,43 @@ a.code-item:focus-visible,
     transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
+.product-photo-grid .product-detail-card > img {
+    display: block;
+    width: 100%;
+    height: 190px;
+    object-fit: contain;
+    border-radius: 14px;
+    background: #f7f8fb;
+    margin-bottom: 16px;
+}
+
+.product-filter-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 20px 0 4px;
+}
+
+.product-filter-nav button {
+    border: 1px solid rgba(45, 49, 146, 0.18);
+    border-radius: 999px;
+    padding: 8px 13px;
+    background: #fff;
+    color: var(--primary-blue);
+    cursor: pointer;
+    font: inherit;
+    font-weight: 600;
+}
+
+.product-filter-nav button[aria-pressed="true"],
+.product-filter-nav button:hover,
+.product-filter-nav button:focus-visible {
+    background: var(--primary-blue);
+    color: #fff;
+}
+
+.product-detail-card[hidden] { display: none; }
+
 .product-detail-card h3,
 .manual-card h3,
 .news-card h3,
