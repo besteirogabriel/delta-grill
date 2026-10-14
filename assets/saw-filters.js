@@ -35,4 +35,18 @@
     button.setAttribute('aria-expanded',String(open));document.getElementById('filter-panel').classList.toggle('is-open',open);
   });
   render();
+  // Production bands are supplied by Delta Grill, never inferred from motor or blade size.
+  fetch('assets/catalog-data.json').then(response => {
+    if (!response.ok) throw new Error('catalog');
+    return response.json();
+  }).then(products => {
+    cards.forEach(card => {
+      const code = card.querySelector('.card-code')?.textContent.trim();
+      const product = products.find(p => p.code === code);
+      card.dataset.production = ['alta','media','baixa'].includes(product?.production) ? product.production : '';
+    });
+    controls.producao.disabled = !cards.some(card => card.dataset.production);
+    if (!controls.producao.disabled) document.getElementById('production-note').textContent = 'Alta produção: alto volume de cortes. Média produção: demanda diária moderada. Baixa produção: menor volume de cortes. Consulte a equipe para confirmar a adequação à sua operação.';
+    render();
+  }).catch(() => { /* Size and configuration filters remain available offline. */ });
 })();
