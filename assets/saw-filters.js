@@ -1,33 +1,38 @@
 (() => {
-    const nav = document.querySelector('.saw-size-nav');
-    if (!nav) return;
-    const links = [...nav.querySelectorAll('[data-saw-filter]')];
-    const cards = [...document.querySelectorAll('[data-saw-group]')];
-    const summary = document.getElementById('saw-results-summary');
-
-    function applyFilter() {
-        const requested = new URL(window.location.href).searchParams.get('serra') || 'todas';
-        const selected = links.find(link => link.dataset.sawFilter === requested) || links[0];
-        const value = selected.dataset.sawFilter;
-        let count = 0;
-        cards.forEach(card => {
-            card.hidden = value !== 'todas' && card.dataset.sawGroup !== value;
-            if (!card.hidden && card.matches('a')) count++;
-        });
-        links.forEach(link => link.setAttribute('aria-current', String(link === selected)));
-        summary.textContent = `${selected.textContent}: ${count} ${count === 1 ? 'modelo disponível' : 'modelos disponíveis'} para consulta.`;
+  const form = document.getElementById('saw-filters');
+  if (!form) return;
+  const cards = [...document.querySelectorAll('[data-saw-group]')];
+  const controls = {tamanho:form.elements.tamanho, configuracao:form.elements.configuracao, producao:form.elements.producao};
+  const hasProduction = cards.some(c => c.dataset.production);
+  controls.producao.disabled = !hasProduction;
+  const legacy = {'146':['1,46 m','sem'],'146-moedor':['1,46 m','moedor'],'180':['1,80 m','sem'],'180-moedor':['1,80 m','moedor'],'180-mesa-movel':['1,80 m','mesa'],'180-mesa-movel-moedor':['1,80 m','mesa-moedor'],'220':['2,20 m',''],'282':['2,82 m','']};
+  function render() {
+    const p = new URL(location.href).searchParams;
+    const old = legacy[p.get('serra')];
+    for (const [key, control] of Object.entries(controls)) {
+      const requested = p.get(key) || (old && key === 'tamanho' ? old[0] : old && key === 'configuracao' ? old[1] : '');
+      control.value = [...control.options].some(o => o.value === requested) && !control.disabled ? requested : '';
     }
-
-    nav.addEventListener('click', event => {
-        const link = event.target.closest('[data-saw-filter]');
-        if (!link || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
-        event.preventDefault();
-        const url = new URL(window.location.href);
-        url.searchParams.set('serra', link.dataset.sawFilter);
-        url.hash = 'serras-fita';
-        if (url.href !== window.location.href) history.pushState(null, '', url);
-        applyFilter();
+    let count = 0;
+    cards.forEach(card => {
+      card.hidden = !!((controls.tamanho.value && card.dataset.size !== controls.tamanho.value) || (controls.configuracao.value && card.dataset.configuration !== controls.configuracao.value) || (controls.producao.value && card.dataset.production !== controls.producao.value));
+      if (!card.hidden) count++;
     });
-    window.addEventListener('popstate', applyFilter);
-    applyFilter();
+    document.getElementById('saw-results-summary').textContent = `${count} ${count === 1 ? 'modelo encontrado' : 'modelos encontrados'}`;
+    document.getElementById('filter-empty').hidden = count > 0;
+  }
+  function update(reset=false) {
+    const url = new URL(location.href); url.searchParams.delete('serra');
+    Object.entries(controls).forEach(([key,c]) => { if (!reset && c.value && !c.disabled) url.searchParams.set(key,c.value); else url.searchParams.delete(key); });
+    history.pushState(null,'',url); render();
+  }
+  form.addEventListener('change',()=>update());
+  form.addEventListener('submit',e=>e.preventDefault());
+  form.addEventListener('reset',e=>{ e.preventDefault(); update(true); });
+  window.addEventListener('popstate',render);
+  document.querySelector('.filters-toggle').addEventListener('click',e=>{
+    const button=e.currentTarget; const open=button.getAttribute('aria-expanded')!=='true';
+    button.setAttribute('aria-expanded',String(open));document.getElementById('filter-panel').classList.toggle('is-open',open);
+  });
+  render();
 })();
