@@ -1,85 +1,26 @@
-(() => {
-    const page = document.querySelector('.product-page');
-    const media = page?.querySelector('.product-media');
-    const sourceImage = media?.querySelector('img');
-    const code = page?.querySelector('.product-kicker')?.textContent.trim() || 'este produto';
-    const title = page?.querySelector('.product-title')?.textContent.trim() || 'Produto Delta Grill';
-    const infoGrid = page?.querySelector('.product-info-grid');
-
-    if (!page || !infoGrid) return;
-
-    const categoryImage = (() => {
-        const value = title.toLowerCase();
-        if (value.includes('panela')) return '../assets/images/GOB00003_Grande.jpeg';
-        if (value.includes('misturador')) return '../assets/images/GOB00204_Grande.jpeg';
-        if (value.includes('serra')) return '../assets/images/00130.jpg';
-        if (value.includes('forno')) return '../assets/images/GOB00023_Grande.jpeg';
-        return '../assets/images/00134.jpg';
-    })();
-
-    if (media && sourceImage && !media.dataset.galleryReady) {
-        const image = sourceImage.cloneNode(true);
-        const primaryFigure = document.createElement('figure');
-        primaryFigure.className = 'product-media-view';
-        primaryFigure.append(image);
-
-        const primaryCaption = document.createElement('figcaption');
-        primaryCaption.textContent = 'Vista do produto';
-        primaryFigure.append(primaryCaption);
-
-        const ambientFigure = document.createElement('figure');
-        ambientFigure.className = 'product-media-view';
-        const ambientImage = document.createElement('img');
-        ambientImage.src = categoryImage;
-        ambientImage.alt = `Imagem ambientada da linha ${title}`;
-        ambientImage.loading = 'lazy';
-        const ambientCaption = document.createElement('figcaption');
-        ambientCaption.textContent = 'Linha Delta Grill em ambiente';
-        ambientFigure.append(ambientImage, ambientCaption);
-
-        const gallery = document.createElement('div');
-        gallery.className = 'product-media-grid';
-        gallery.append(primaryFigure, ambientFigure);
-        media.textContent = '';
-        media.classList.add('product-media-gallery');
-        media.dataset.galleryReady = 'true';
-        media.append(gallery);
+(async () => {
+  const media=document.querySelector('.product-media[data-product-code]');
+  if(!media) return;
+  try {
+    const response=await fetch('../assets/catalog-data.json');if(!response.ok) return;
+    const products=await response.json();const product=products.find(p=>p.code===media.dataset.productCode);if(!product) return;
+    const image=media.querySelector('#main-product-image');
+    if(image && product.images.length>1){
+      let active=0;const controls=document.createElement('div');controls.className='gallery-controls';
+      const prev=document.createElement('button');prev.type='button';prev.textContent='←';prev.setAttribute('aria-label','Foto anterior');
+      const next=document.createElement('button');next.type='button';next.textContent='→';next.setAttribute('aria-label','Próxima foto');
+      const status=document.createElement('span');status.setAttribute('aria-live','polite');
+      controls.append(prev,status,next);media.append(controls);
+      const thumbs=document.createElement('div');thumbs.className='gallery-thumbs';thumbs.setAttribute('aria-label','Fotos do produto');
+      const buttons=product.images.map((src,i)=>{const b=document.createElement('button');b.type='button';b.setAttribute('aria-label',`Ver foto ${i+1} de ${product.code}`);const thumb=document.createElement('img');thumb.src='../'+src;thumb.alt='';thumb.loading='lazy';b.append(thumb);b.addEventListener('click',()=>show(i));thumbs.append(b);return b;});
+      media.append(thumbs);
+      function show(index){active=(index+product.images.length)%product.images.length;image.src='../'+product.images[active];image.alt=`${product.name} — ${product.code}, foto ${active+1}`;status.textContent=`${active+1} / ${product.images.length}`;buttons.forEach((b,i)=>b.setAttribute('aria-pressed',String(i===active)));}
+      prev.addEventListener('click',()=>show(active-1));next.addEventListener('click',()=>show(active+1));
+      thumbs.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();show(active+(e.key==='ArrowRight'?1:-1));buttons[active].focus();}});
+      let touchX;image.addEventListener('touchstart',e=>touchX=e.changedTouches[0].clientX,{passive:true});image.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-touchX;if(Math.abs(dx)>45)show(active+(dx<0?1:-1));},{passive:true});show(0);
     }
-
-    const whatsappText = encodeURIComponent(`Olá! Gostaria de receber o manual e o vídeo de apresentação do ${code}.`);
-    const resources = document.createElement('section');
-    resources.className = 'product-extra-section';
-    resources.setAttribute('aria-label', `Materiais de apoio do ${title}`);
-    resources.innerHTML = `
-        <div class="product-extra-heading">
-            <h2>Materiais e apresentação</h2>
-            <p>Tenha acesso ao catálogo, aos manuais de instruções e ao atendimento para este produto.</p>
-        </div>
-        <div class="product-resource-grid">
-            <article class="product-resource-card">
-                <i class="fas fa-book-open" aria-hidden="true"></i>
-                <h3>Manual de instruções</h3>
-                <p>Consulte a central de manuais. Se o arquivo deste modelo não estiver listado, solicite-o à equipe.</p>
-                <div class="section-actions">
-                    <a class="btn btn-outline" href="https://drive.google.com/drive/folders/1HW7wntXjjFC97KKhjK16Bw3dcfhGVFQg" target="_blank" rel="noopener">Abrir manuais</a>
-                </div>
-            </article>
-            <article class="product-resource-card">
-                <i class="fas fa-file-pdf" aria-hidden="true"></i>
-                <h3>Informações completas</h3>
-                <p>Baixe o catálogo atualizado para consultar dados técnicos, dimensões e configurações disponíveis.</p>
-                <div class="section-actions">
-                    <a class="btn btn-outline" href="../downloads/Delta_Grill_Catalogo_Atualizado.pdf" download>Baixar catálogo</a>
-                </div>
-            </article>
-            <article class="product-resource-card">
-                <i class="fas fa-circle-play" aria-hidden="true"></i>
-                <h3>Vídeo de apresentação</h3>
-                <p>Peça à equipe a demonstração e os vídeos de operação disponíveis para este modelo.</p>
-                <div class="section-actions">
-                    <a class="btn btn-primary" href="https://wa.me/5554996068328?text=${whatsappText}" target="_blank" rel="noopener">Solicitar vídeo</a>
-                </div>
-            </article>
-        </div>`;
-    infoGrid.after(resources);
+    // Approved per-product media only. Missing materials do not produce broken embeds.
+    if(product.ambient){const fig=document.createElement('figure');fig.className='product-ambient';const img=document.createElement('img');img.src='../'+product.ambient;img.alt=product.name+' em ambiente de uso';img.loading='lazy';fig.append(img);media.append(fig);}
+    if(product.video && /^[A-Za-z0-9_-]{11}$/.test(product.video)){const frame=document.createElement('iframe');frame.className='product-video';frame.src='https://www.youtube-nocookie.com/embed/'+product.video;frame.title='Apresentação de '+product.name;frame.loading='lazy';frame.allowFullscreen=true;media.append(frame);}
+  }catch(error){/* The static photograph and commercial information remain available. */}
 })();

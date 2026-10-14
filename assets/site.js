@@ -1,4 +1,9 @@
 (() => {
+  if (location.pathname.endsWith('/produtos.html') && location.hash) {
+    const categories = ['serras-fita','misturadores','moedores-carne','raladores','panelas-mexedoras','processadores-acougue','fornos-aquecimento','acessorios'];
+    const slug = location.hash.slice(1);
+    if (categories.includes(slug)) location.replace('categoria-' + slug + '.html' + location.search);
+  }
   const toggle = document.querySelector('.site-menu-toggle');
   const nav = document.getElementById('site-navigation');
   toggle?.addEventListener('click', () => {

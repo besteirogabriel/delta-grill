@@ -443,26 +443,7 @@
                 <div class="hero-card">
                     <span class="hero-kicker">Rede comercial</span>
                     <h1>Representantes Delta Grill</h1>
-                    <p>Filtre por estado, encontre o representante da sua região e conte com o atendimento da fábrica quando precisar de apoio comercial direto.</p>
-                </div>
-
-                <div class="notice-grid">
-                    <article class="notice-card">
-                        <i class="fas fa-location-dot"></i>
-                        <h3>Busca por estado</h3>
-                        <p>Use o filtro para encontrar contatos comerciais por região e falar com a Delta Grill quando precisar de apoio direto da fábrica.</p>
-                    </article>
-                    <article class="notice-card">
-                        <i class="fas fa-phone-volume"></i>
-                        <h3>Atendimento direto</h3>
-                        <p>Se o estado ainda não aparecer com representante ativo, o contato pode ser encaminhado imediatamente para a fábrica pelo WhatsApp.</p>
-                    </article>
-                    <article class="notice-card">
-                        <i class="fas fa-clock"></i>
-                        <h3>Horário comercial</h3>
-                        <p>Segunda a sexta, das 07:30 às 11:50 e das 13:30 às 17:30.</p>
-                    </article>
-                </div>
+                    </div>
 
                 <section class="filters" aria-label="Filtros de representantes">
                     <div class="filters-head">
@@ -498,12 +479,13 @@
                         <div class="results-grid" id="results"></div>
                     </section>
 
-                    <aside class="contact-panel">
+                    </div>
+            <aside class="contact-panel factory-contact">
                         <div>
-                            <h2>Contato da fábrica</h2>
-                            <p>Enquanto a rede completa por estado é consolidada, a equipe comercial da Delta Grill segue como ponto de apoio nacional.</p>
+                            <h2>Fábrica Delta Grill</h2>
+                            <p>Não encontrou atendimento na sua região? Fale com a fábrica para receber orientação e encaminhamento comercial.</p>
                         </div>
-                        <div class="contact-item">
+                        <p><small>Segunda a sexta, das 07:30 às 11:50 e das 13:30 às 17:30.</small></p><div class="contact-item">
                             <strong>Telefone</strong>
                             <span>(54) 3538-9778</span>
                         </div>
@@ -516,31 +498,18 @@
                             <span>R. Archimedes Manenti, 489 - Centenário, Caxias do Sul - RS, 95045-175</span>
                         </div>
                         <div class="result-actions">
-                            <a class="btn btn-primary" href="https://wa.me/5554996068328?text=Ol%C3%A1!%20Preciso%20de%20um%20representante%20Delta%20Grill." target="_blank" rel="noopener">
-                                <i class="fab fa-whatsapp"></i>
-                                Falar no WhatsApp
-                            </a>
+                            <a class="btn btn-primary" href="https://wa.me/5554996068328?text=Ol%C3%A1!%20Preciso%20de%20um%20representante%20Delta%20Grill." target="_blank" rel="noopener">Falar com a Delta Grill</a>
                             <a class="btn btn-secondary" href="contato.html">Abrir contato</a>
                         </div>
                     </aside>
                 </div>
-            </div>
         </section>
     </main>
 
     <script>
         const allStates = ['AC', 'AL', 'AM', 'AP', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MG', 'MS', 'MT', 'PA', 'PB', 'PE', 'PI', 'PR', 'RJ', 'RN', 'RO', 'RR', 'RS', 'SC', 'SE', 'SP', 'TO'];
 
-        const representatives = [
-            {
-                name: 'Fábrica Delta Grill',
-                state: 'RS',
-                city: 'Caxias do Sul',
-                phone: '(54) 3538-9778',
-                whatsapp: '5554996068328',
-                note: 'Atendimento comercial direto da fábrica e encaminhamento para a rede de representantes.'
-            }
-        ];
+        const representatives = [];
 
         const stateSelect = document.getElementById('stateSelect');
         const searchInput = document.getElementById('searchInput');
@@ -575,6 +544,7 @@
         const syncActiveState = () => {
             Array.from(stateGrid.children).forEach((button) => {
                 button.classList.toggle('active', button.textContent === stateSelect.value);
+                button.setAttribute('aria-pressed', String(button.textContent === stateSelect.value));
             });
         };
 
@@ -586,7 +556,7 @@
                 results.innerHTML = `
                     <div class="empty-state">
                         <p>Nenhum representante cadastrado para o filtro atual.</p>
-                        <p>Enquanto a rede dessa região é atualizada, recomendamos acionar a fábrica pelo WhatsApp para encaminhamento comercial.</p>
+                        <p>Você pode solicitar uma indicação de atendimento à equipe no fim desta página.</p>
                     </div>
                 `;
                 return;
@@ -613,7 +583,7 @@
                             <i class="fab fa-whatsapp"></i>
                             Falar no WhatsApp
                         </a>
-                        <a class="btn btn-secondary" href="index.html#contato">Abrir formulário</a>
+                        <a class="btn btn-secondary" href="contato.html">Abrir formulário</a>
                     </div>
                 `;
                 results.appendChild(card);
