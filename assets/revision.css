@@ -763,3 +763,53 @@ input,select,textarea {
     gap:10px
   }
 }
+
+/* Inspect equipment photos without leaving the product or losing keyboard focus. */
+.gallery-enlarge {
+  display: block;
+  margin: 12px auto 0;
+  padding: 10px 16px;
+  border: 1px solid #d6d8e5;
+  border-radius: 8px;
+  background: white;
+  color: var(--brand);
+  cursor: zoom-in;
+}
+.product-photo-dialog {
+  width: min(1000px, calc(100vw - 28px));
+  max-height: calc(100dvh - 28px);
+  margin: auto;
+  padding: 20px;
+  border: 0;
+  border-radius: 16px;
+  color: var(--ink);
+}
+.product-photo-dialog::backdrop { background: #11122edb; }
+.product-photo-dialog > img {
+  width: 100%;
+  height: min(70dvh, 760px);
+  object-fit: contain;
+}
+.product-photo-dialog button {
+  padding: 10px 14px;
+  border: 1px solid #d6d8e5;
+  border-radius: 8px;
+  background: white;
+  color: var(--brand);
+  cursor: pointer;
+}
+.photo-dialog-close { display: block; margin: 0 0 10px auto; }
+.photo-dialog-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 12px;
+  font-size: 14px;
+}
+.photo-dialog-open { overflow: hidden; }
+@media (max-width: 480px) {
+  .product-photo-dialog { padding: 12px; }
+  .photo-dialog-navigation { flex-wrap: wrap; }
+  .photo-dialog-navigation p { order: -1; width: 100%; text-align: center; }
+}

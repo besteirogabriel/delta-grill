@@ -66,3 +66,12 @@ Para repetir: servir a raiz por HTTP e executar `node tests/site-smoke.cjs`, com
 - Bandeira RS: https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Rio_Grande_do_Sul.svg (símbolo oficial, Wikimedia Commons).
 - Mapa de estados: https://servicodados.ibge.gov.br/api/docs/malhas?versao=3, país BR, intrarregião UF, qualidade mínima.
 - Fotos: arquivos já presentes em `assets/images/`.
+
+## Continuação da revisão
+
+- Fotos agora abrem em visualização ampliada, com navegação, fechamento por Escape e retorno do foco ao botão de origem. A rolagem da página é bloqueada somente enquanto a foto está aberta.
+- Busca reconhece plurais e variantes como “serras 1,46m”, “serra 1460mm” e “panela mexedora”, mantendo a consulta por código, potência e aplicação.
+- Fichas técnicas receberam garantia, tipo de alimentação e detalhes de tensão já existentes. Medidas repetidas foram retiradas dos diferenciais, sem alterar seus valores; lâmina não aparece novamente como fita estendida quando ambas representam a mesma medida.
+- Novo teste cobre abertura da foto, navegação pelo teclado, Escape e restauração do foco. Inspeção visual da ampliação concluída a 1366 e 390 px.
+- Testes funcionais e layouts representativos a 320, 768 e 1920 px passaram após esses ajustes; verificação de links continua com 57 páginas e zero problemas.
+- As dependências de materiais oficiais listadas acima permanecem abertas.

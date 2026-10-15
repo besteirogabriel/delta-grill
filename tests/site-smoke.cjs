@@ -39,10 +39,20 @@ const base=process.env.SITE_URL || 'http://127.0.0.1:8080';
   await page.unroute('**/assets/catalog-data.json');
   console.log('PASS filters, combination, counter, empty state, reset, reload, back and legacy links');
   await go('busca.html?q=DG1026');await page.waitForFunction(()=>document.getElementById('search-status').textContent.includes('encontrado'));assert.equal(await page.locator('#search-results .saw-product').count(),1);
-  for(const [query,count] of [['serra 1,46',5],['moedor',3],['inexistente xyz',0]]){await page.fill('#catalog-query',query);const actual=await page.locator('#search-results .saw-product').count();if(query==='moedor')assert(actual>=count);else assert.equal(actual,count);}
+  for(const [query,count] of [['serra 1,46',5],['serras 1,46m',5],['serra 1460mm',5],['panela mexedora',6],['moedor',3],['inexistente xyz',0]]){await page.fill('#catalog-query',query);const actual=await page.locator('#search-results .saw-product').count();if(query==='moedor')assert(actual>=count);else assert.equal(actual,count);}
   await page.fill('#catalog-query','<img src=x onerror=alert(1)>');assert.equal(await page.locator('#search-results img').count(),0);
   console.log('PASS code, size, name, no results and safe search rendering');
   await go('produtos/dg-1026.html');await page.waitForSelector('.gallery-controls');const before=await page.locator('#main-product-image').getAttribute('src');await page.getByRole('button',{name:'Próxima foto'}).click();assert.notEqual(await page.locator('#main-product-image').getAttribute('src'),before);
+  await page.getByRole('button',{name:'Ampliar foto do produto'}).click();
+  assert(await page.getByRole('dialog').isVisible());
+  const enlarged=await page.locator('.product-photo-dialog > img').getAttribute('src');
+  await page.keyboard.press('ArrowRight');
+  assert.notEqual(await page.locator('.product-photo-dialog > img').getAttribute('src'),enlarged);
+  await page.keyboard.press('Escape');
+  assert(!(await page.getByRole('dialog').isVisible()));
+  assert(await page.getByRole('button',{name:'Ampliar foto do produto'}).evaluate(el=>el===document.activeElement));
+  assert.equal(await page.locator('.technical-table tr').filter({hasText:'Fita estendida'}).count(),0);
+  assert.match(await page.locator('.technical-table').innerText(),/Garantia[\s\S]*3 meses/);
   const whatsapp=await page.getByRole('link',{name:'Solicitar orçamento',exact:true}).getAttribute('href');const message=new URL(whatsapp).searchParams.get('text');assert(message.includes('DG 1026')&&message.includes('Serra-Fita 1,46 m'));
   assert.equal(await page.locator('.related-products .saw-product').count(),3);
   console.log('PASS gallery, related products and WhatsApp product identification');
