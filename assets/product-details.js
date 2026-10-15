@@ -135,13 +135,32 @@
       media.append(figure);
     }
     if (product.video && /^[A-Za-z0-9_-]{11}$/.test(product.video)) {
+      const section = document.createElement('section');
+      section.className = 'product-video-section';
+      const heading = document.createElement('h2');
+      heading.textContent = product.videoScope === 'family' ? 'Veja a linha em ação' : 'Veja o produto em ação';
+      section.append(heading);
+      if (product.videoScope === 'family') {
+        const note = document.createElement('p');
+        note.textContent = 'Demonstração da linha de panelas misturadoras de 10 L. A cor exibida pode variar em relação a este modelo.';
+        section.append(note);
+      }
       const frame = document.createElement('iframe');
-      frame.className = 'product-video';
-      frame.src = 'https://www.youtube-nocookie.com/embed/' + product.video;
-      frame.title = 'Apresentação de ' + product.name;
+      frame.className = 'product-video' + (product.videoFormat === 'portrait' ? ' product-video-portrait' : '');
+      frame.src = 'https://www.youtube-nocookie.com/embed/' + product.video + '?rel=0';
+      frame.title = product.videoTitle || 'Apresentação de ' + product.name;
       frame.loading = 'lazy';
+      frame.referrerPolicy = 'strict-origin-when-cross-origin';
+      frame.allow = 'accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
       frame.allowFullscreen = true;
-      media.append(frame);
+      const direct = document.createElement('a');
+      direct.href = 'https://www.youtube.com/shorts/' + product.video;
+      direct.textContent = 'Assistir no YouTube ↗';
+      direct.target = '_blank';
+      direct.rel = 'noopener';
+      section.append(frame, direct);
+      media.classList.add('has-video');
+      media.append(section);
     }
   } catch (error) {
     // Static images, specifications and quotation links still work if the catalogue cannot load.

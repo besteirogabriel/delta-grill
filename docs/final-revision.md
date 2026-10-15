@@ -33,7 +33,7 @@ Referências: Word “PROMPT DE COMANDO PARA ALTERAÇÕES NO SITE OFICIAL” e o
 
 1. Classificação oficial de cada Serra-Fita em alta, média e baixa produção. O tamanho ou a potência não foram usados para inventar essa classificação. Preencher `production` com `alta`, `media` ou `baixa` em `assets/catalog-data.json`; o filtro se habilita quando houver classificações aprovadas.
 2. Identificação das imagens “01” e “001” e das fotos ambientadas de cada produto. A apresentação usa fotos já existentes da Delta Grill. As galerias não exibem uma foto genérica de showroom como se fosse uma aplicação daquele modelo.
-3. Links de vídeos do YouTube por modelo. O campo `video` aceita o ID do vídeo, e `ambient` aceita o caminho de uma imagem local aprovada. Hoje esses campos estão vazios; não há incorporações falsas ou quebradas.
+3. Vídeos dos modelos ainda sem correspondência no canal. Já foram incorporados nove vídeos específicos, a demonstração da panela de 10 L nas seis variantes e seis demonstrações nas categorias. A relação completa está em [vídeos oficiais](videos-oficiais.md). O DG 1100 aparece no canal, mas ainda depende de cadastro e ficha técnica. O campo `ambient` continua aguardando fotos aprovadas.
 4. Cadastro real de representantes. A base anterior continha somente a fábrica, que foi retirada da lista de representantes e mantida como contato separado. Os estados e o mapa funcionam; nenhum representante fictício foi criado.
 5. Cronologia detalhada da empresa, caso desejada. A página atual usa os fatos institucionais disponíveis: Caxias do Sul, mais de 20 anos, fabricação, desenvolvimento e testes.
 6. Traduções editoriais revisadas, caso se deseje substituir o serviço externo por páginas próprias em espanhol e inglês.
@@ -75,3 +75,12 @@ Para repetir: servir a raiz por HTTP e executar `node tests/site-smoke.cjs`, com
 - Novo teste cobre abertura da foto, navegação pelo teclado, Escape e restauração do foco. Inspeção visual da ampliação concluída a 1366 e 390 px.
 - Testes funcionais e layouts representativos a 320, 768 e 1920 px passaram após esses ajustes; verificação de links continua com 57 páginas e zero problemas.
 - As dependências de materiais oficiais listadas acima permanecem abertas.
+
+## Vídeos do canal oficial
+
+- Canal fornecido pelo usuário: https://www.youtube.com/@DeltaGrill.
+- 16 vídeos conferidos; 15 utilizados, com correspondência e pendência documentadas em [vídeos oficiais](videos-oficiais.md).
+- Vídeos de linha identificados explicitamente; links diretos disponíveis, inclusive sem JavaScript nas páginas de produto.
+- Links sociais corrigidos em todas as páginas.
+- Validação deste lote: correspondência dos nove códigos com os títulos oficiais e das seis variantes com a linha de panelas; 57 páginas sem problemas de links; sintaxe JavaScript e diff sem erros.
+- Prévia no navegador: player e miniatura carregados no DG 1027 em desktop e DG 1068 a 390 px; categorias de serras e panelas com duas e quatro incorporações respectivamente, sem rolagem horizontal no celular. Reprodução integral dos vídeos não foi testada.

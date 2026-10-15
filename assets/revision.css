@@ -813,3 +813,15 @@ input,select,textarea {
   .photo-dialog-navigation { flex-wrap: wrap; }
   .photo-dialog-navigation p { order: -1; width: 100%; text-align: center; }
 }
+
+/* Official channel Shorts retain their portrait framing under product photos. */
+.product-video-section { margin-top: 30px; border-top: 1px solid #e7e8ed; padding-top: 24px; }
+.product-video-section h2, .line-videos h2, .line-video-card h3 { color: var(--brand); }
+.product-video-section p, .line-videos > .container > p { color: #60687a; font-size: 14px; line-height: 1.7; }
+.product-video-portrait { display: block; aspect-ratio: 9 / 16; width: min(100%, 315px); height: auto; margin: 20px auto; border-radius: 12px; }
+.product-video-section > a, .line-video-card > a { display: block; text-align: center; color: var(--brand); font-size: 14px; margin: 16px 0; }
+.product-page .product-media.has-video { position: static; }
+.line-video-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 30px; margin-top: 25px; }
+.line-video-card { padding: 20px; background: #fff; border: 1px solid #e7e8ed; border-radius: 16px; }
+.line-video-card h3 { text-align: center; font-size: 20px; }
+@media (max-width: 650px) { .line-video-grid { grid-template-columns: 1fr; } }
