@@ -3,31 +3,40 @@
 Implementação na branch `final-revision`, a partir da main. Nenhum deploy ou push realizado.
 Referências: Word “PROMPT DE COMANDO PARA ALTERAÇÕES NO SITE OFICIAL” e os 20 slides de “PROMPT SITE”.
 
-## Entregas
+## Entregas e status após QA
 
-- [x] Página inicial: apresentação institucional unificada, fotos locais substitutas, história resumida e acesso ao catálogo.
-- [x] História: página própria com os fatos confirmados no catálogo, sem inventar datas ou marcos.
+Auditoria em 15/10/2026: **funcionalidades testadas aprovadas, escopo ainda parcial**. Ver [relatório completo de QA](qa-final-revision.md). Componentes implementados não significam conteúdo concluído.
+
+- [ ] Página inicial (parcial — fotos definitivas pendentes): apresentação institucional unificada, fotos locais substitutas, história resumida e acesso ao catálogo.
+- [ ] História (parcial — conteúdo detalhado pendente): página própria com os fatos confirmados no catálogo, sem inventar datas ou marcos.
 - [x] Navegação: famílias sem lista de modelos, menu mobile, contatos no rodapé, redes sociais à esquerda e bandeiras à direita.
 - [x] Novidades retirada dos menus enquanto não há conteúdo editorial real.
 - [x] Contato: página útil com telefone, e-mail, endereço e formulário que prepara mensagem no WhatsApp, sem simular envio.
 - [x] Catálogo: título/texto sugeridos, círculos centralizados, retirada da imagem grande e dos dois botões da abertura.
 - [x] Oito páginas de categorias, com links diretos e preservação dos antigos links por âncora.
 - [x] Serra-Fita: filtros independentes de tamanho e configuração, contador, limpeza, estado vazio, URLs compartilháveis e histórico.
-- [x] Produção: mecanismo implementado e testado com dados de teste, inativo no conteúdo público até classificação oficial.
+- [ ] Produção (parcial — falta classificação real): mecanismo implementado e testado com dados de teste, inativo no conteúdo público até classificação oficial.
 - [x] Categorias menores: remoção de filtros e destaque a capacidade, boca e motor nos cards.
 - [x] Busca: código com/sem espaço, nome, categoria, características e aplicação, sem diferenciar acentos.
-- [x] Páginas individuais: nomes comerciais, CTA com nome/código, diferenciais, aplicações e ficha técnica em tabela.
-- [x] Galerias: imagens existentes identificadas, navegação por botões, miniaturas, teclado e gesto no celular.
+- [ ] Páginas individuais (parcial — corrigir/completar fichas, QA-01/QA-02/QA-03): nomes comerciais, CTA com nome/código, diferenciais, aplicações e ficha técnica em tabela.
+- [ ] Galerias (parcial — DG 1047/DG 1049 sem foto, ambientadas pendentes): imagens existentes identificadas, navegação por botões, miniaturas, teclado e gesto no celular.
 - [x] Produtos relacionados: links da mesma categoria, sem recomendar equipamentos inexistentes.
-- [x] Recursos de mídia: suporte a foto ambientada específica e vídeo YouTube por produto, sem imagens ou vídeos genéricos apresentados como específicos.
+- [ ] Recursos de mídia (parcial — suporte pronto, cobertura incompleta): suporte a foto ambientada específica e vídeo YouTube por produto, sem imagens ou vídeos genéricos apresentados como específicos.
 - [x] Remoção do card redundante de informações completas e do pedido de vídeo quando não há um vídeo identificado.
 - [x] Soluções: guia por seis segmentos, vinculado às famílias existentes.
 - [x] WhatsApp fixo em todas as páginas; nas páginas individuais leva o nome e o código do produto.
 - [x] Representantes: textos repetidos removidos, fábrica separada ao fim e horário dentro do cartão.
 - [x] Mapa: estados clicáveis com malha oficial do IBGE, ligado aos filtros e acessível pelo teclado.
 - [x] Idiomas: ES/EN abrem tradução automática externa do endereço público pelo Google Tradutor, identificada no título dos links e na página Idiomas. Na prévia local, os links abrem a explicação.
-- [x] Revisão de nomenclatura, códigos e cores de panelas confirmadas no catálogo.
+- [x] Nomenclatura, códigos e cores de panelas conferidos; a revisão técnica completa permanece aberta (QA-01/QA-02).
 - [x] Verificação de links internos e testes desktop/mobile.
+
+## Correções e cobertura ainda abertas
+
+- [ ] Padronizar ordem/eixos das dimensões das seis panelas conforme catálogo (QA-01).
+- [ ] Incluir dados já disponíveis que faltam nas fichas, como embalagem DG 1088 e tipo de alimentação em modelos indicados no QA (QA-02).
+- [ ] Completar ou delimitar o catálogo de Fornos, Ensacadeiras e Acessórios: páginas de categorias existem, mas não há modelos individuais nessas famílias (QA-05).
+- [ ] Completar o cadastro de representantes; os ajustes visuais e o mapa estão prontos, a base está vazia.
 
 ## Materiais ainda necessários
 
