@@ -19,7 +19,7 @@
     function show(index) {
       active = (index + product.images.length) % product.images.length;
       const source = '../' + product.images[active];
-      const description = `${product.name} — ${product.code}, foto ${active + 1}`;
+      const description = product.imageAlt || `${product.name} — ${product.code}, foto ${active + 1}`;
       image.src = source;
       image.alt = description;
       if (status) status.textContent = `${active + 1} / ${product.images.length}`;

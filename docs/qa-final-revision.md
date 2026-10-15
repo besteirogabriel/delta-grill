@@ -1,8 +1,26 @@
 # QA da revisão final — 15/10/2026
 
-**Resultado: funcionamento aprovado nos testes executados; escopo e conteúdo ainda parciais. Não considerar todas as alterações concluídas.**
+**Resultado após correções: QA-01 e QA-02 resolvidos; fluxos e regressões aprovados. As pendências que dependem de material continuam abertas.**
 
-Branch auditada: `final-revision`. Código de referência: `af08d84`. Esta auditoria altera documentação e adiciona teste, sem modificar o site nem publicar.
+Branch: `final-revision`. A auditoria original abaixo descreve o código `af08d84`; suas constatações foram preservadas como histórico. Correções técnicas registradas em `bf67ba6`; o lote seguinte completa acessórios, consultas comerciais e testes. Nenhum push/deploy realizado.
+
+## Estado atual após os ajustes autorizados
+
+| Achado | Estado atual |
+| --- | --- |
+| QA-01 | Resolvido: dimensões das seis panelas na ordem do catálogo, com eixos e legenda; dimensões com moedor identificadas separadamente. |
+| QA-02 | Resolvido para os dados apontados: embalagem DG 1088, alimentação monofásica nas serras documentadas e informações comuns às seis panelas. |
+| QA-03 | Parcial: removida afirmação de mesa em inox sem fonte disponível nos DG 1047–1049 e incluída orientação para confirmar características por código; fichas/fotos oficiais ainda necessárias. |
+| QA-04 | Pendente: classificação de produção, fotos ambientadas/01/001 e cadastro de representantes dependem de material. |
+| QA-05 | Acessórios resolvido com quatro lâminas oficiais, fichas, imagens da linha identificadas, busca, relacionados e orçamento. Fornos/Ensacadeiras delimitados como consulta, com CTAs específicos; modelos individuais dependem de dados. |
+| QA-06 | Mantidas alternativas e limites documentados; não foram inventados vídeos, marcos históricos nem traduções revisadas. |
+| QA-07 | Mantida quebra natural de títulos para preservar a leitura em cada largura. Foto ambientada permanece pendente; vídeo abaixo da galeria quando disponível. |
+
+Também foram corrigidas as instruções antigas que pediam para filtrar misturadores, moedores, raladores e panelas apesar da remoção dos filtros.
+
+**Revalidação:** 61 páginas em 390/1366 px; layouts representativos em 320/768/1920 px; filtros, busca, galeria, menu, mapa e ausência de erros JavaScript aprovados. Os 42 produtos passaram nas verificações de nomes, imagens existentes, WhatsApp e 15 associações de vídeo. As medidas corrigidas e as quatro lâminas têm verificações de regressão contra os dados do catálogo. Navegação e busca de acessórios, CTAs dos fornos e formulário com requisição externa interceptada também passaram. Links locais: 61 páginas, zero problemas.
+
+As matrizes e contagens nas seções abaixo são o **registro da auditoria inicial**, não o status atualizado. Para pendências atuais, usar esta tabela e o [checklist atualizado](final-revision.md).
 
 ## Fontes e método
 
@@ -129,3 +147,10 @@ Não houve teste de envio real de WhatsApp, homologação de traduções no dom�
 **Antes de declarar a revisão completa:** resolver QA-01 e QA-02, obter os materiais de QA-03/QA-04 e fechar a cobertura comercial de QA-05. As alternativas/limitações de QA-06 e QA-07 devem constar da revisão final do usuário. Não há falha funcional bloqueante reproduzida nos fluxos testados, mas há pendências reais de conteúdo e aderência.
 
 Para repetir os testes de navegador, iniciar o servidor HTTP na raiz e executar `node tests/site-smoke.cjs` e `node tests/site-content-smoke.cjs`. Ambos aceitam `PLAYWRIGHT_MODULE`, `CHROME_PATH` e `SITE_URL`.
+
+## Rastreabilidade das correções
+
+- Fonte das medidas e limites das panelas: catálogo atualizado, página 4.
+- Embalagem DG 1088: página 8. Alimentação: páginas correspondentes às serras, todas explicitando monofásica; não aplicada aos DG 1047–1049.
+- Lâminas: página 29. DG 3203 = 1,46 m; DG 3013 = 1,80 m; DG 3172 = 2,20 m; DG 3195 = 2,82 m. Largura 5/8 pol. e espessura 0,5 mm nos quatro itens. Imagem extraída do PDF com sua máscara original, identificada como imagem da linha.
+- Ao buscar “serra 1,46”, há agora seis resultados: cinco máquinas e a lâmina correspondente; a categoria Serra-Fita continua com 24 máquinas.

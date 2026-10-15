@@ -21,7 +21,7 @@
       matches.forEach(p=>{
         const a=document.createElement('a');a.className='saw-product';a.href=p.url;
         if(!p.images[0]){const placeholder=document.createElement('span');placeholder.className='saw-photo-pending';placeholder.textContent='Foto sob consulta';a.append(placeholder);}
-        if(p.images[0]){const image=document.createElement('img');image.src=p.images[0];image.alt=p.name;image.loading='lazy';a.append(image);}
+        if(p.images[0]){const image=document.createElement('img');image.src=p.images[0];image.alt=p.imageAlt || p.name;image.loading='lazy';a.append(image);}
         for(const [className,text] of [['card-code',p.code],['card-name',p.name],['card-specs',p.specs.join(' · ')],['card-use',p.applications.join(', ')],['saw-product-action','Ver produto →']]){const el=document.createElement('span');el.className=className;el.textContent=text;a.append(el);}
         results.append(a);
       });

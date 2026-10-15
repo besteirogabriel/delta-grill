@@ -23,6 +23,25 @@ const base = (process.env.SITE_URL || 'http://127.0.0.1:8080').replace(/\/$/, ''
       await page.goto(base + product.url);
       await page.waitForFunction(() => document.querySelector('.gallery-enlarge') || !document.querySelector('#main-product-image'));
       assert.equal(await page.locator('h1').innerText(), product.name, product.code);
+      // Values checked against the official catalogue, pages 4, 8 and 29.
+      const cell = label => page.locator('.technical-table tr').filter({has: page.getByRole('rowheader', {name: label, exact: true})}).locator('td');
+      if (product.category === 'panelas-mexedoras') {
+        assert.equal(await cell('Produto (L × A × P)').innerText(), '33,7 x 32,5 x 34,7 cm');
+        assert.equal(await cell('Embalagem (L × A × P)').innerText(), '33,7 x 32,5 x 34,7 cm');
+        assert.equal(await cell('Peso embalado').innerText(), '8 kg');
+        assert.match(await cell('Limite recomendado').innerText(), /2 kg de farinha/);
+      }
+      if (product.code === 'DG 1088') assert.equal(await cell('Embalagem (L × A × P)').innerText(), '45 x 77 x 44 cm');
+      if (product.category === 'serras-fita' && !['DG 1047', 'DG 1048', 'DG 1049'].includes(product.code)) {
+        assert.equal(await cell('Tipo').innerText(), 'Monofásico');
+      }
+      const bladeLengths = {'DG 3203':'1.460 mm','DG 3013':'1.800 mm','DG 3172':'2.200 mm','DG 3195':'2.820 mm'};
+      if (bladeLengths[product.code]) {
+        assert.equal(await cell('Comprimento').innerText(), bladeLengths[product.code]);
+        assert.equal(await cell('Largura').innerText(), '5/8 pol.');
+        assert.equal(await cell('Espessura').innerText(), '0,5 mm');
+        assert.match(await page.locator('.media-caption').innerText(), /Imagem da linha/);
+      }
       const links = await page.locator('a[href*="wa.me/"]').all();
       assert(links.length > 0, product.code + ': contato comercial ausente');
       for (const link of links) {
@@ -43,6 +62,19 @@ const base = (process.env.SITE_URL || 'http://127.0.0.1:8080').replace(/\/$/, ''
     }
     console.log(`PASS ${products.length} produtos: títulos, imagens existentes, WhatsApp e ${videos} associações de vídeo`);
 
+    await page.goto(base + 'categoria-acessorios.html');
+    assert.equal(await page.locator('.saw-product').count(), 4);
+    await page.getByRole('link').filter({hasText: 'DG 3203'}).click();
+    assert(page.url().endsWith('produtos/dg-3203.html'));
+    await page.goto(base + 'busca.html?q=DG3203');
+    await page.waitForSelector('#search-results .saw-product');
+    assert.equal(await page.locator('#search-results .saw-product').count(), 1);
+    await page.goto(base + 'categoria-fornos-aquecimento.html');
+    for (const kind of ['turbo', 'esteira']) {
+      const href = await page.getByRole('link', {name:'Consultar forno ' + kind + ' →', exact:true}).getAttribute('href');
+      assert(new URL(href).searchParams.get('text').includes('forno ' + kind));
+    }
+    console.log('PASS navegação/busca de acessórios e consulta específica dos fornos');
     await page.goto(base + 'contato.html');
     await page.getByRole('button', { name: 'Continuar no WhatsApp' }).click();
     assert(page.url().endsWith('contato.html'), 'Formulário vazio não deve navegar');
@@ -55,7 +87,7 @@ const base = (process.env.SITE_URL || 'http://127.0.0.1:8080').replace(/\/$/, ''
 
     for (const width of [320, 768, 1920]) {
       await page.setViewportSize({ width, height: 900 });
-      for (const file of ['produtos/dg-1068.html', 'produtos/dg-1027.html', 'categoria-panelas-mexedoras.html']) {
+      for (const file of ['produtos/dg-1068.html', 'produtos/dg-1027.html', 'categoria-panelas-mexedoras.html', 'produtos/dg-3203.html', 'categoria-acessorios.html', 'categoria-fornos-aquecimento.html']) {
         await page.goto(base + file);
         assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `${file}: overflow em ${width}`);
       }

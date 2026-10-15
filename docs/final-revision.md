@@ -18,7 +18,7 @@ Auditoria em 15/10/2026: **funcionalidades testadas aprovadas, escopo ainda parc
 - [ ] Produção (parcial — falta classificação real): mecanismo implementado e testado com dados de teste, inativo no conteúdo público até classificação oficial.
 - [x] Categorias menores: remoção de filtros e destaque a capacidade, boca e motor nos cards.
 - [x] Busca: código com/sem espaço, nome, categoria, características e aplicação, sem diferenciar acentos.
-- [ ] Páginas individuais (parcial — corrigir/completar fichas, QA-01/QA-02/QA-03): nomes comerciais, CTA com nome/código, diferenciais, aplicações e ficha técnica em tabela.
+- [ ] Páginas individuais (parcial — fichas corrigidas; QA-03 ainda depende de material): nomes comerciais, CTA com nome/código, diferenciais, aplicações e ficha técnica em tabela.
 - [ ] Galerias (parcial — DG 1047/DG 1049 sem foto, ambientadas pendentes): imagens existentes identificadas, navegação por botões, miniaturas, teclado e gesto no celular.
 - [x] Produtos relacionados: links da mesma categoria, sem recomendar equipamentos inexistentes.
 - [ ] Recursos de mídia (parcial — suporte pronto, cobertura incompleta): suporte a foto ambientada específica e vídeo YouTube por produto, sem imagens ou vídeos genéricos apresentados como específicos.
@@ -28,14 +28,16 @@ Auditoria em 15/10/2026: **funcionalidades testadas aprovadas, escopo ainda parc
 - [x] Representantes: textos repetidos removidos, fábrica separada ao fim e horário dentro do cartão.
 - [x] Mapa: estados clicáveis com malha oficial do IBGE, ligado aos filtros e acessível pelo teclado.
 - [x] Idiomas: ES/EN abrem tradução automática externa do endereço público pelo Google Tradutor, identificada no título dos links e na página Idiomas. Na prévia local, os links abrem a explicação.
-- [x] Nomenclatura, códigos e cores de panelas conferidos; a revisão técnica completa permanece aberta (QA-01/QA-02).
+- [x] Nomenclatura, códigos e cores de panelas conferidos; QA-01/QA-02 corrigidos; fichas sem fonte oficial continuam pendentes.
 - [x] Verificação de links internos e testes desktop/mobile.
 
 ## Correções e cobertura ainda abertas
 
-- [ ] Padronizar ordem/eixos das dimensões das seis panelas conforme catálogo (QA-01).
-- [ ] Incluir dados já disponíveis que faltam nas fichas, como embalagem DG 1088 e tipo de alimentação em modelos indicados no QA (QA-02).
-- [ ] Completar ou delimitar o catálogo de Fornos, Ensacadeiras e Acessórios: páginas de categorias existem, mas não há modelos individuais nessas famílias (QA-05).
+- [x] Padronizar ordem/eixos das dimensões das seis panelas conforme catálogo (QA-01), com legenda de largura/altura/profundidade e distinção para medidas com moedor instalado.
+- [x] Incluir dados já disponíveis que faltavam nas fichas: embalagem DG 1088, alimentação monofásica das serras documentadas e embalagem/peso/limite de farinha das panelas (QA-02).
+- [x] Completar Acessórios com as quatro lâminas do catálogo (DG 3203, 3013, 3172 e 3195), incluindo páginas, busca, ficha e orçamento.
+- [x] Delimitar Fornos e Ensacadeiras como consulta à fábrica, com chamadas comerciais específicas (QA-05).
+- [ ] Cadastrar modelos de Fornos e Ensacadeiras quando houver fichas/fotos oficiais disponíveis.
 - [ ] Completar o cadastro de representantes; os ajustes visuais e o mapa estão prontos, a base está vazia.
 
 ## Materiais ainda necessários
@@ -93,3 +95,16 @@ Para repetir: servir a raiz por HTTP e executar `node tests/site-smoke.cjs`, com
 - Links sociais corrigidos em todas as páginas.
 - Validação deste lote: correspondência dos nove códigos com os títulos oficiais e das seis variantes com a linha de panelas; 57 páginas sem problemas de links; sintaxe JavaScript e diff sem erros.
 - Prévia no navegador: player e miniatura carregados no DG 1027 em desktop e DG 1068 a 390 px; categorias de serras e panelas com duas e quatro incorporações respectivamente, sem rolagem horizontal no celular. Reprodução integral dos vídeos não foi testada.
+
+## Correções após o QA — 15/10/2026
+
+- Dimensões das panelas alinhadas à ordem L × A × P do catálogo; tabelas com legenda dos eixos.
+- Fichas completadas com os dados oficiais disponíveis, sem preencher especificações ausentes por inferência.
+- DG 1047–1049: retirada a afirmação de mesa em inox sem confirmação na fonte disponível e incluída orientação para confirmar características pelo código. Fotos/fichas continuam pendentes.
+- Quatro lâminas cadastradas a partir da página 29 do catálogo: 42 produtos em 61 páginas HTML. A imagem extraída do PDF é identificada como imagem da linha, sem afirmar que mostra cada comprimento específico.
+- Fornos e Ensacadeiras com orientação de consulta e chamadas específicas; removido o cartão “Utensílios — Em definição”.
+- Corrigidas mensagens que ainda falavam em filtros nas quatro categorias onde eles foram removidos.
+- Títulos mantêm quebra natural quando necessário para preservar legibilidade, inclusive em celular; a sugestão de uma linha não foi aplicada como regra rígida.
+
+- Revalidação após correções: 61 páginas sem problemas de links; testes de desktop/mobile, conteúdo dos 42 produtos, medidas, novos acessórios e CTAs dos fornos aprovados. Nenhum erro JavaScript no teste principal.
+- Conferência visual das correções concluída em desktop e celular: categoria Acessórios, nova página de lâmina, tabela de panela e cartões de consulta dos fornos.

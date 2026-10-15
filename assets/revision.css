@@ -834,3 +834,7 @@ input,select,textarea {
   margin-bottom: 12px;
 }
 .spec-consultation { color: #60687a; line-height: 1.65; margin-bottom: 16px; }
+.media-caption { color: #60687a; font-size: .85rem; line-height: 1.6; margin: 18px 0 0; }
+.catalog-guidance { color: #60687a; line-height: 1.65; margin: 0 0 24px; }
+.accessory-support { margin-top: 32px; }
+.support-card .btn { margin-top: 18px; }

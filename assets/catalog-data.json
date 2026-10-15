@@ -1010,5 +1010,105 @@
     ],
     "ambient": null,
     "video": null
+  },
+  {
+    "code": "DG 3203",
+    "name": "Lâmina para Serra-Fita 1,46 m",
+    "category": "acessorios",
+    "categoryName": "Acessórios",
+    "size": "1,46 m",
+    "configuration": null,
+    "production": null,
+    "specs": [
+      "1,46 m",
+      "5/8 pol.",
+      "0,5 mm"
+    ],
+    "applications": [
+      "Reposição de lâmina para Serra-Fita"
+    ],
+    "description": "Lâmina de reposição de 1,46 m, largura de 5/8 de polegada e espessura de 0,5 mm. Confirme essas medidas e a compatibilidade com o seu equipamento ao solicitar o orçamento.",
+    "url": "produtos/dg-3203.html",
+    "images": [
+      "assets/images/catalog-vitrine/laminas-catalogo.png"
+    ],
+    "imageAlt": "Lâminas da linha Delta Grill — imagem do catálogo",
+    "ambient": null,
+    "video": null
+  },
+  {
+    "code": "DG 3013",
+    "name": "Lâmina para Serra-Fita 1,80 m",
+    "category": "acessorios",
+    "categoryName": "Acessórios",
+    "size": "1,80 m",
+    "configuration": null,
+    "production": null,
+    "specs": [
+      "1,80 m",
+      "5/8 pol.",
+      "0,5 mm"
+    ],
+    "applications": [
+      "Reposição de lâmina para Serra-Fita"
+    ],
+    "description": "Lâmina de reposição de 1,80 m, largura de 5/8 de polegada e espessura de 0,5 mm. Confirme essas medidas e a compatibilidade com o seu equipamento ao solicitar o orçamento.",
+    "url": "produtos/dg-3013.html",
+    "images": [
+      "assets/images/catalog-vitrine/laminas-catalogo.png"
+    ],
+    "imageAlt": "Lâminas da linha Delta Grill — imagem do catálogo",
+    "ambient": null,
+    "video": null
+  },
+  {
+    "code": "DG 3172",
+    "name": "Lâmina para Serra-Fita 2,20 m",
+    "category": "acessorios",
+    "categoryName": "Acessórios",
+    "size": "2,20 m",
+    "configuration": null,
+    "production": null,
+    "specs": [
+      "2,20 m",
+      "5/8 pol.",
+      "0,5 mm"
+    ],
+    "applications": [
+      "Reposição de lâmina para Serra-Fita"
+    ],
+    "description": "Lâmina de reposição de 2,20 m, largura de 5/8 de polegada e espessura de 0,5 mm. Confirme essas medidas e a compatibilidade com o seu equipamento ao solicitar o orçamento.",
+    "url": "produtos/dg-3172.html",
+    "images": [
+      "assets/images/catalog-vitrine/laminas-catalogo.png"
+    ],
+    "imageAlt": "Lâminas da linha Delta Grill — imagem do catálogo",
+    "ambient": null,
+    "video": null
+  },
+  {
+    "code": "DG 3195",
+    "name": "Lâmina para Serra-Fita 2,82 m",
+    "category": "acessorios",
+    "categoryName": "Acessórios",
+    "size": "2,82 m",
+    "configuration": null,
+    "production": null,
+    "specs": [
+      "2,82 m",
+      "5/8 pol.",
+      "0,5 mm"
+    ],
+    "applications": [
+      "Reposição de lâmina para Serra-Fita"
+    ],
+    "description": "Lâmina de reposição de 2,82 m, largura de 5/8 de polegada e espessura de 0,5 mm. Confirme essas medidas e a compatibilidade com o seu equipamento ao solicitar o orçamento.",
+    "url": "produtos/dg-3195.html",
+    "images": [
+      "assets/images/catalog-vitrine/laminas-catalogo.png"
+    ],
+    "imageAlt": "Lâminas da linha Delta Grill — imagem do catálogo",
+    "ambient": null,
+    "video": null
   }
 ]
