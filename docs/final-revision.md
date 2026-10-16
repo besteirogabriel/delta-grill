@@ -5,7 +5,7 @@ Referências: Word “PROMPT DE COMANDO PARA ALTERAÇÕES NO SITE OFICIAL” e o
 
 ## Entregas e status após QA
 
-Auditoria em 15/10/2026: **funcionalidades testadas aprovadas, escopo ainda parcial**. Ver [relatório completo de QA](qa-final-revision.md). Componentes implementados não significam conteúdo concluído.
+Auditoria em 15/10/2026: **funcionalidades testadas aprovadas, escopo ainda parcial**. Ver a [segunda revisão de QA](qa-segunda-revisao.md), concluída em 16/10/2026, e o [histórico da primeira revisão](qa-final-revision.md). Componentes implementados não significam conteúdo concluído.
 
 - [ ] Página inicial (parcial — fotos definitivas pendentes): apresentação institucional unificada, fotos locais substitutas, história resumida e acesso ao catálogo.
 - [ ] História (parcial — conteúdo detalhado pendente): página própria com os fatos confirmados no catálogo, sem inventar datas ou marcos.
@@ -58,10 +58,10 @@ Fonte: `downloads/Delta_Grill_Catalogo_Atualizado.pdf`.
 - Há modelos no site cuja ficha detalhada não está no catálogo disponível. Os dados existentes foram preservados e os campos ausentes continuam sob consulta, sem inventar especificações.
 - Padronização comercial: Serra-Fita, metros com espaço, milímetros na ficha técnica; Panelas Misturadoras; Ensacadeiras.
 
-## Validação
+## Validação atual
 
-- `python3 tests/check-links.py`: 57 páginas, nenhum arquivo local ou destino de âncora ausente, nenhum ID duplicado.
-- `tests/site-smoke.cjs`: 57 páginas a 390 e 1366 px; páginas representativas também a 320, 768 e 1920 px, sem rolagem horizontal.
+- `python3 tests/check-links.py`: 61 páginas, nenhum arquivo local ou destino de âncora ausente, nenhum ID duplicado.
+- `tests/site-smoke.cjs`: 61 páginas a 390 e 1366 px; páginas representativas também a 320, 768 e 1920 px, sem rolagem horizontal.
 - Filtros: combinação, contador, zero resultados, limpeza, recarregamento, voltar e links antigos. Produção testada com fixture separada dos dados publicados.
 - Busca: código, tamanho, nome, nenhum resultado e entrada semelhante a HTML tratada como texto.
 - Galeria, relacionados e nome/código na mensagem de orçamento.
@@ -108,3 +108,10 @@ Para repetir: servir a raiz por HTTP e executar `node tests/site-smoke.cjs`, com
 
 - Revalidação após correções: 61 páginas sem problemas de links; testes de desktop/mobile, conteúdo dos 42 produtos, medidas, novos acessórios e CTAs dos fornos aprovados. Nenhum erro JavaScript no teste principal.
 - Conferência visual das correções concluída em desktop e celular: categoria Acessórios, nova página de lâmina, tabela de panela e cartões de consulta dos fornos.
+
+## Segunda revisão de QA — 16/10/2026
+
+- Pedidos obrigatórios e sugestões condicionais distinguidos no [relatório atual](qa-segunda-revisao.md).
+- Corrigida a ocultação de YouTube/LinkedIn no celular; a faixa superior se adapta sem remover redes.
+- Testes adicionais: 25 combinações de filtros, 42 códigos na busca, aplicações/características, gesto simulado de galeria, mapa por teclado e 61 páginas em 320/390/1024/1280 px. Todos aprovados.
+- Dependências de conteúdo permanecem abertas; não há declaração de conclusão integral.

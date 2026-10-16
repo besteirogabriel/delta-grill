@@ -585,8 +585,12 @@ input,select,textarea {
   .solution-grid {
     grid-template-columns:1fr
   }
-  .site-social a:nth-child(n+3) {
-    display:none
+  .site-top .site-shell {
+    flex-wrap:wrap;
+    gap:8px 16px
+  }
+  .site-origin {
+    margin-left:auto
   }
   .site-whatsapp {
     bottom:14px;
