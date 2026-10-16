@@ -1,5 +1,7 @@
 # Segunda revisão de QA — concluída em 16/10/2026
 
+> Atualização de 16/10/2026: ver [matriz pedido × feito × falta](pedido-feito-falta.md). A nova conferência identificou lacunas no DG 1066 e fotos locais não conciliadas; as afirmações anteriores de ausência de pendências de implementação não devem ser usadas como conclusão atual.
+
 **Conclusão: os fluxos implementados passaram; o pedido inicial está amplamente atendido, mas não integralmente. Permanecem dependências de conteúdo e material oficial.**
 
 Revisão sobre `2c4e02d`, na branch `final-revision`, mais a correção do cabeçalho móvel feita nesta rodada. Nenhum push ou deploy. Esta é a avaliação atual; o relatório `qa-final-revision.md` preserva a auditoria anterior e suas correções.

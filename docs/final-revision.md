@@ -3,6 +3,10 @@
 Implementação na branch `final-revision`, a partir da main. Nenhum deploy ou push realizado.
 Referências: Word “PROMPT DE COMANDO PARA ALTERAÇÕES NO SITE OFICIAL” e os 20 slides de “PROMPT SITE”.
 
+## Referência atual de atendimento
+
+A [comparação pedido × feito × falta](pedido-feito-falta.md), de 16/10/2026, prevalece sobre os resumos anteriores. Foram identificadas duas lacunas adicionais: resumo/card/índice de busca do DG 1066 sem características e seis fotos locais de panelas ainda não conciliadas nas galerias. Não afirmar que só falta material externo.
+
 ## Entregas e status após QA
 
 Auditoria em 15/10/2026: **funcionalidades testadas aprovadas, escopo ainda parcial**. Ver a [segunda revisão de QA](qa-segunda-revisao.md), concluída em 16/10/2026, e o [histórico da primeira revisão](qa-final-revision.md). Componentes implementados não significam conteúdo concluído.
@@ -16,8 +20,8 @@ Auditoria em 15/10/2026: **funcionalidades testadas aprovadas, escopo ainda parc
 - [x] Oito páginas de categorias, com links diretos e preservação dos antigos links por âncora.
 - [x] Serra-Fita: filtros independentes de tamanho e configuração, contador, limpeza, estado vazio, URLs compartilháveis e histórico.
 - [ ] Produção (parcial — falta classificação real): mecanismo implementado e testado com dados de teste, inativo no conteúdo público até classificação oficial.
-- [x] Categorias menores: remoção de filtros e destaque a capacidade, boca e motor nos cards.
-- [x] Busca: código com/sem espaço, nome, categoria, características e aplicação, sem diferenciar acentos.
+- [ ] Categorias menores: filtros removidos; falta destacar motor/produção no card DG 1066 (PPT 12).
+- [ ] Busca: mecanismo funcional, mas faltam as características do DG 1066 no índice; busca por código/nome e demais dados cadastrados funciona.
 - [ ] Páginas individuais (parcial — fichas corrigidas; QA-03 ainda depende de material): nomes comerciais, CTA com nome/código, diferenciais, aplicações e ficha técnica em tabela.
 - [ ] Galerias (parcial — DG 1047/DG 1049 sem foto, ambientadas pendentes): imagens existentes identificadas, navegação por botões, miniaturas, teclado e gesto no celular.
 - [x] Produtos relacionados: links da mesma categoria, sem recomendar equipamentos inexistentes.

@@ -1,5 +1,7 @@
 # QA da revisão final — 15/10/2026
 
+> Atualização de 16/10/2026: ver [matriz pedido × feito × falta](pedido-feito-falta.md). A nova conferência identificou lacunas no DG 1066 e fotos locais não conciliadas; as afirmações anteriores de ausência de pendências de implementação não devem ser usadas como conclusão atual.
+
 **Resultado após correções: QA-01 e QA-02 resolvidos; fluxos e regressões aprovados. As pendências que dependem de material continuam abertas.**
 
 Branch: `final-revision`. A auditoria original abaixo descreve o código `af08d84`; suas constatações foram preservadas como histórico. Correções técnicas registradas em `bf67ba6`; o lote seguinte completa acessórios, consultas comerciais e testes. Nenhum push/deploy realizado.
