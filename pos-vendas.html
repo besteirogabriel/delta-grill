@@ -1,161 +1,224 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delta Grill | Pós-vendas</title>
     <meta name="description" content="Página de pós-vendas Delta Grill com assistência técnica, manuais, peças e perguntas frequentes.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
     <link rel="stylesheet" href="assets/internal-pages.css">
-</head>
-<body>
-    <header class="page-header">
-        <div class="container">
-            <a class="page-logo" href="index.html"><img src="assets/logo_sem_bg.png" alt="Delta Grill"></a>
-            <nav class="page-nav">
-                <a href="index.html">Início</a>
-                <a href="produtos.html">Produtos</a>
-                <a href="pos-vendas.html" class="is-active">Pós-vendas</a>
-                <a href="representantes.html">Representantes</a>
-                <a href="novidades.html">Novidades</a>
-                <a href="index.html#contato">Contato</a>
-            </nav>
+    <link rel="stylesheet" href="assets/revision.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-top">
+        <div class="site-shell">
+          <div class="site-social">
+            <a href="https://instagram.com/deltagrillrs" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://facebook.com/deltagrillrs" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://www.youtube.com/@DeltaGrill" target="_blank" rel="noopener">YouTube</a>
+            <a href="https://linkedin.com/company/deltagrillrs" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+          <div class="site-origin">
+            <img src="assets/images/flag-rs.svg" alt="Rio Grande do Sul" width="25" height="18">
+            <span title="Brasil" aria-label="Brasil">🇧🇷</span>
+            <a data-language="es" href="idiomas.html" lang="es" title="Tradução automática para espanhol">ES</a>
+            <a data-language="en" href="idiomas.html" lang="en" title="Automatic English translation">EN</a>
+          </div>
         </div>
+      </div>
+      <div class="site-shell site-main">
+        <a href="index.html" class="site-logo">
+          <img src="assets/logo_sem_bg.png" alt="Delta Grill — Início">
+        </a>
+        <button class="site-menu-toggle" aria-expanded="false" aria-controls="site-navigation">Menu <span aria-hidden="true">☰</span>
+        </button>
+        <nav id="site-navigation" aria-label="Navegação principal">
+          <a href="index.html">Início</a>
+          <details class="site-products">
+            <summary>Produtos</summary>
+            <div class="site-families">
+              <a href="produtos.html">Todos os produtos</a>
+              <a href="categoria-serras-fita.html">Serra-Fita</a>
+              <a href="categoria-misturadores.html">Misturadores de Carne</a>
+              <a href="categoria-moedores-carne.html">Moedores</a>
+              <a href="categoria-raladores.html">Raladores</a>
+              <a href="categoria-panelas-mexedoras.html">Panelas Misturadoras</a>
+              <a href="categoria-processadores-acougue.html">Ensacadeiras</a>
+              <a href="categoria-fornos-aquecimento.html">Fornos</a>
+              <a href="categoria-acessorios.html">Acessórios</a>
+              <a href="pos-vendas.html#pecas">Peças de reposição</a>
+            </div>
+          </details>
+          <a href="solucoes.html">Soluções</a>
+          <a href="historia.html">Delta Grill</a>
+          <a href="pos-vendas.html">Pós-vendas</a>
+          <a href="representantes.html">Representantes</a>
+          <a href="contato.html">Contato</a>
+          <a class="site-search-link" href="busca.html" aria-label="Buscar produtos">Buscar</a>
+        </nav>
+      </div>
     </header>
-
     <main>
-        <section class="page-hero">
-            <div class="container">
-                <div class="hero-panel">
-                    <div class="hero-grid">
-                        <div>
-                            <span class="hero-eyebrow"><i class="fas fa-headset"></i> Suporte e relacionamento</span>
-                            <h1>Pós-vendas pronto para crescer com a rede Delta Grill.</h1>
-                            <p>Encontre suporte, peças de reposição, manuais e respostas rápidas para manter seus equipamentos Delta Grill em operação.</p>
-                            <div class="anchor-nav">
-                                <a href="#assistencia">Assistência técnica</a>
-                                <a href="#manuais">Manuais</a>
-                                <a href="#pecas">Peças</a>
-                                <a href="#faq">FAQ</a>
-                            </div>
-                        </div>
-                        <div class="hero-media">
-                            <img src="assets/images/00133.jpg" alt="Marca Delta Grill">
-                        </div>
-                    </div>
+      <section class="page-hero">
+        <div class="container">
+          <div class="hero-panel">
+            <div class="hero-grid">
+              <div>
+                <span class="hero-eyebrow">
+                  <i class="fas fa-headset" aria-hidden="true"></i> Suporte e relacionamento</span>
+                <h1>Pós-vendas pronto para crescer com a rede Delta Grill.</h1>
+                <p>Encontre suporte, peças de reposição, manuais e respostas rápidas para manter seus equipamentos Delta Grill em operação.</p>
+                <div class="anchor-nav">
+                  <a href="#assistencia">Assistência técnica</a>
+                  <a href="#manuais">Manuais</a>
+                  <a href="#pecas">Peças</a>
+                  <a href="#faq">FAQ</a>
                 </div>
+              </div>
+              <div class="hero-media">
+                <img src="assets/images/00133.jpg" alt="Marca Delta Grill">
+              </div>
             </div>
-        </section>
-
-        <section class="page-section" id="assistencia">
-            <div class="container">
-                <div class="section-card">
-                    <div class="section-heading">
-                        <div>
-                            <span class="section-tag"><i class="fas fa-map-location-dot"></i> Assistência técnica</span>
-                            <h2>Filtro por estado e cidade</h2>
-                            <p>Enquanto a rede completa não é publicada, o mapa usa o atendimento da fábrica como ponto central. A mesma estrutura permite crescer estado por estado depois.</p>
-                        </div>
-                    </div>
-                    <div class="directory-layout">
-                        <div class="directory-map-shell">
-                            <div class="directory-filters">
-                                <div class="filter-panel">
-                                    <label for="assistencia-state">Estado</label>
-                                    <select id="assistencia-state"></select>
-                                </div>
-                                <div class="filter-panel">
-                                    <label for="assistencia-city">Cidade</label>
-                                    <select id="assistencia-city"></select>
-                                </div>
-                                <div class="filter-panel">
-                                    <label for="assistencia-search">Pesquisar</label>
-                                    <input id="assistencia-search" type="text" placeholder="Nome, cidade ou observação">
-                                </div>
-                            </div>
-                            <div class="directory-map" id="assistencia-map"></div>
-                        </div>
-                        <aside class="directory-sidebar" id="assistencia-results"></aside>
-                    </div>
-                    <p class="mini-note">Consulte também a página de <a href="assistencia.html">assistência técnica</a>.</p>
+          </div>
+        </div>
+      </section>
+      <section class="page-section" id="assistencia">
+        <div class="container">
+          <div class="section-card">
+            <div class="section-heading">
+              <div>
+                <span class="section-tag">
+                  <i class="fas fa-map-location-dot" aria-hidden="true"></i> Assistência técnica</span>
+                <h2>Filtro por estado e cidade</h2>
+                <p>Enquanto a rede completa não é publicada, o mapa usa o atendimento da fábrica como ponto central. A mesma estrutura permite crescer estado por estado depois.</p>
+              </div>
+            </div>
+            <div class="directory-layout">
+              <div class="directory-map-shell">
+                <div class="directory-filters">
+                  <div class="filter-panel">
+                    <label for="assistencia-state">Estado</label>
+                    <select id="assistencia-state"></select>
+                  </div>
+                  <div class="filter-panel">
+                    <label for="assistencia-city">Cidade</label>
+                    <select id="assistencia-city"></select>
+                  </div>
+                  <div class="filter-panel">
+                    <label for="assistencia-search">Pesquisar</label>
+                    <input id="assistencia-search" type="text" placeholder="Nome, cidade ou observação">
+                  </div>
                 </div>
+                <div class="directory-map" id="assistencia-map"></div>
+              </div>
+              <aside class="directory-sidebar" id="assistencia-results"></aside>
             </div>
-        </section>
-
-        <section class="page-section" id="manuais">
-            <div class="container">
-                <div class="section-card">
-                    <div class="section-heading">
-                        <div>
-                            <span class="section-tag"><i class="fas fa-book"></i> Biblioteca técnica</span>
-                            <h2>Manuais de instrução</h2>
-                            <p>Solicite o manual à equipe Delta Grill informando o código DG do seu equipamento.</p>
-                        </div>
-                    </div>
-                    <div class="manual-grid">
-                        <article class="manual-card"><span class="status-badge pending">Solicite o manual</span><h3>Serras-fita</h3><p>Receba orientação para localizar o manual correto da sua serra-fita pelo código do equipamento.</p></article>
-                        <article class="manual-card"><span class="status-badge pending">Solicite o manual</span><h3>Misturador de Carne</h3><p>Solicite manuais dos misturadores de carne inox Delta Grill.</p></article>
-                        <article class="manual-card"><span class="status-badge pending">Solicite o manual</span><h3>Moedores e raladores</h3><p>Tenha apoio para uso, limpeza e manutenção dos moedores e raladores da linha de processamento.</p></article>
-                        <article class="manual-card"><span class="status-badge pending">Solicite o manual</span><h3>Panelas Misturadeiras</h3><p>Consulte orientação para as panelas misturadeiras de 10 L nas cores disponíveis.</p></article>
-                        <article class="manual-card"><span class="status-badge pending">Solicite o manual</span><h3>Fornos e aquecimento</h3><p>Fale com a equipe Delta Grill para receber orientação sobre instalação e operação dos fornos.</p></article>
-                        <article class="manual-card"><span class="status-badge ready">Disponível</span><h3>Catálogo completo</h3><p>Baixe o catálogo completo para consultar códigos, linhas e características dos equipamentos.</p><div class="manual-actions"><a href="downloads/Delta_Grill_Catalogo_Atualizado.pdf" class="btn btn-outline" download><i class="fas fa-download"></i> Baixar catálogo</a></div></article>
-                    </div>
+            <p class="mini-note">Consulte também a página de <a href="assistencia.html">assistência técnica</a>.</p>
+          </div>
+        </div>
+      </section>
+      <section class="page-section" id="manuais">
+        <div class="container">
+          <div class="section-card">
+            <div class="section-heading">
+              <div>
+                <span class="section-tag">
+                  <i class="fas fa-book" aria-hidden="true"></i> Biblioteca técnica</span>
+                <h2>Manuais de instrução</h2>
+                <p>Solicite o manual à equipe Delta Grill informando o código DG do seu equipamento.</p>
+              </div>
+            </div>
+            <div class="manual-grid">
+              <article class="manual-card">
+                <span class="status-badge pending">Solicite o manual</span>
+                <h3>Serra-Fita</h3>
+                <p>Receba orientação para localizar o manual correto da sua Serra-Fita pelo código do equipamento.</p>
+              </article>
+              <article class="manual-card">
+                <span class="status-badge pending">Solicite o manual</span>
+                <h3>Misturador de Carne</h3>
+                <p>Solicite manuais dos misturadores de carne inox Delta Grill.</p>
+              </article>
+              <article class="manual-card">
+                <span class="status-badge pending">Solicite o manual</span>
+                <h3>Moedores e raladores</h3>
+                <p>Tenha apoio para uso, limpeza e manutenção dos moedores e raladores da linha de processamento.</p>
+              </article>
+              <article class="manual-card">
+                <span class="status-badge pending">Solicite o manual</span>
+                <h3>Panelas Misturadoras</h3>
+                <p>Consulte orientação para as panelas misturadeiras de 10 L nas cores disponíveis.</p>
+              </article>
+              <article class="manual-card">
+                <span class="status-badge pending">Solicite o manual</span>
+                <h3>Fornos e aquecimento</h3>
+                <p>Fale com a equipe Delta Grill para receber orientação sobre instalação e operação dos fornos.</p>
+              </article>
+              <article class="manual-card">
+                <span class="status-badge ready">Disponível</span>
+                <h3>Catálogo completo</h3>
+                <p>Baixe o catálogo completo para consultar códigos, linhas e características dos equipamentos.</p>
+                <div class="manual-actions">
+                  <a href="downloads/Delta_Grill_Catalogo_Atualizado.pdf" class="btn btn-outline" download>
+                    <i class="fas fa-download" aria-hidden="true"></i> Baixar catálogo</a>
                 </div>
+              </article>
             </div>
-        </section>
-
-        <section class="page-section" id="pecas">
-            <div class="container">
-                <div class="cta-banner">
-                    <h3>Peças de reposição com atendimento direto.</h3>
-                    <p>Fale com a Delta Grill pelo WhatsApp e informe o modelo do equipamento e a peça necessária.</p>
-                    <div class="cta-actions">
-                        <a href="https://wa.me/5554996068328?text=Ol%C3%A1%21%20Gostaria%20de%20comprar%20pe%C3%A7as%20de%20reposi%C3%A7%C3%A3o%20Delta%20Grill." class="btn btn-secondary" target="_blank" rel="noopener">
-                            <i class="fab fa-whatsapp"></i>
+          </div>
+        </div>
+      </section>
+      <section class="page-section" id="pecas">
+        <div class="container">
+          <div class="cta-banner">
+            <h3>Peças de reposição com atendimento direto.</h3>
+            <p>Fale com a Delta Grill pelo WhatsApp e informe o modelo do equipamento e a peça necessária.</p>
+            <div class="cta-actions">
+              <a href="https://wa.me/5554996068328?text=Ol%C3%A1%21%20Gostaria%20de%20comprar%20pe%C3%A7as%20de%20reposi%C3%A7%C3%A3o%20Delta%20Grill." class="btn btn-secondary" target="_blank" rel="noopener">
+                <i class="fab fa-whatsapp" aria-hidden="true"></i>
                             Solicitar peças
                         </a>
-                    </div>
-                </div>
             </div>
-        </section>
-
-        <section class="page-section" id="faq">
-            <div class="container">
-                <div class="section-card">
-                    <div class="section-heading">
-                        <div>
-                            <span class="section-tag"><i class="fas fa-circle-question"></i> Perguntas frequentes</span>
-                            <h2>Perguntas frequentes sobre suporte Delta Grill</h2>
-                            <p>Confira orientações gerais e entre em contato para esclarecer dúvidas sobre o seu equipamento.</p>
-                        </div>
-                    </div>
-                    <div class="support-grid">
-                        <article class="support-card"><h3>Garantia e cobertura</h3><p>A garantia de fábrica cobre o equipamento conforme o termo comercial. Fale com a Delta Grill para validar prazo e procedimento pelo código do produto.</p></article>
-                        <article class="support-card"><h3>Voltagem e instalação</h3><p>Confira a voltagem indicada no produto e solicite orientação antes da instalação para preservar desempenho e segurança.</p></article>
-                        <article class="support-card"><h3>Uso de manuais</h3><p>Use o código DG do equipamento para pedir o manual correto e receber instruções compatíveis com o seu modelo.</p></article>
-                        <article class="support-card"><h3>Peças e manutenção</h3><p>Informe o modelo, código e peça desejada para agilizar o atendimento de reposição e manutenção.</p></article>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer-simple">
-        <div class="container">
-            <span>&copy; 2026 Delta Grill. Pós-vendas em consolidação.</span>
-            <nav>
-                <a href="index.html">Início</a>
-                <a href="produtos.html">Produtos</a>
-                <a href="representantes.html">Representantes</a>
-                <a href="novidades.html">Novidades</a>
-            </nav>
+          </div>
         </div>
-    </footer>
-
+      </section>
+      <section class="page-section" id="faq">
+        <div class="container">
+          <div class="section-card">
+            <div class="section-heading">
+              <div>
+                <span class="section-tag">
+                  <i class="fas fa-circle-question" aria-hidden="true"></i> Perguntas frequentes</span>
+                <h2>Perguntas frequentes sobre suporte Delta Grill</h2>
+                <p>Confira orientações gerais e entre em contato para esclarecer dúvidas sobre o seu equipamento.</p>
+              </div>
+            </div>
+            <div class="support-grid">
+              <article class="support-card">
+                <h3>Garantia e cobertura</h3>
+                <p>A garantia de fábrica cobre o equipamento conforme o termo comercial. Fale com a Delta Grill para validar prazo e procedimento pelo código do produto.</p>
+              </article>
+              <article class="support-card">
+                <h3>Voltagem e instalação</h3>
+                <p>Confira a voltagem indicada no produto e solicite orientação antes da instalação para preservar desempenho e segurança.</p>
+              </article>
+              <article class="support-card">
+                <h3>Uso de manuais</h3>
+                <p>Use o código DG do equipamento para pedir o manual correto e receber instruções compatíveis com o seu modelo.</p>
+              </article>
+              <article class="support-card">
+                <h3>Peças e manutenção</h3>
+                <p>Informe o modelo, código e peça desejada para agilizar o atendimento de reposição e manutenção.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="assets/map-directory.js"></script>
     <script>
@@ -179,5 +242,32 @@
             ]
         });
     </script>
-</body>
+    <footer class="site-footer" id="contato-rodape">
+      <div class="site-shell site-footer-grid">
+        <div>
+          <img src="assets/logo_sem_bgsqr.png" alt="Delta Grill" width="90">
+          <p>Fabricante de equipamentos gastronômicos profissionais.</p>
+          <p>Caxias do Sul · Rio Grande do Sul</p>
+        </div>
+        <div>
+          <h2>Explore</h2>
+          <a href="produtos.html">Produtos</a>
+          <a href="solucoes.html">Soluções por segmento</a>
+          <a href="historia.html">Nossa história</a>
+          <a href="representantes.html">Representantes</a>
+        </div>
+        <div>
+          <h2>Atendimento</h2>
+          <a href="tel:+555435389778">(54) 3538-9778</a>
+          <a href="mailto:contato@deltagrillrs.com.br">contato@deltagrillrs.com.br</a>
+          <a href="pos-vendas.html">Manuais, peças e assistência</a>
+          <p>Segunda a sexta<br>07:30–11:50 e 13:30–17:30</p>
+        </div>
+      </div>
+      <div class="site-shell site-copyright">© 2026 Delta Grill. Todos os direitos reservados.</div>
+    </footer>
+    <a class="site-whatsapp" href="https://wa.me/5554996068328" target="_blank" rel="noopener" aria-label="Fale conosco pelo WhatsApp">
+      <span aria-hidden="true">◉</span> Fale conosco</a>
+    <script src="assets/site.js" defer></script>
+  </body>
 </html>
