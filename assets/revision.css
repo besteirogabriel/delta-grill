@@ -217,6 +217,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 }
 .editorial-image {
   width:100%;
+  height:auto;
   max-height:420px;
   object-fit:cover;
   border-radius:20px;
@@ -284,6 +285,7 @@ input,select,textarea {
   margin:35px auto 0
 }
 .category-gallery img {
+  height:auto;
   margin:auto
 }
 .category-gallery a {
@@ -986,3 +988,6 @@ input,select,textarea {
     border:0
   }
 }
+
+.hero-media.client-support { min-height:0; align-self:center }
+.hero-media.client-support img { display:block; min-height:0; height:auto }
