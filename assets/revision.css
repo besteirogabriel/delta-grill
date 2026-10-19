@@ -49,14 +49,11 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
   color:inherit;
   text-decoration:none
 }
-.site-origin span:first-child {
-  background:linear-gradient(145deg,#1c7942 34%,#ce292d 35%,#ce292d 65%,#e8c332 66%);
-  border:1px solid #ffffff70;
-  font-size:9px;
-  font-weight:bold;
-  padding:3px 5px;
-  color:white
+.site-origin .site-language-current,.site-origin a {
+  font:inherit;
+  line-height:1.5
 }
+
 .site-main {
   display:flex;
   align-items:center;
@@ -90,9 +87,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
   cursor:pointer;
   list-style:none
 }
-.site-products summary:after {
-  content:'⌄';
-  margin-left:7px
+.site-products summary::-webkit-details-marker {
+  display:none
 }
 .site-families {
   position:absolute;
