@@ -217,6 +217,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 }
 .editorial-image {
   width:100%;
+  height:auto;
   max-height:420px;
   object-fit:cover;
   border-radius:20px;
@@ -284,6 +285,7 @@ input,select,textarea {
   margin:35px auto 0
 }
 .category-gallery img {
+  height:auto;
   margin:auto
 }
 .category-gallery a {
@@ -941,3 +943,51 @@ input,select,textarea {
   .masterchef-feature { padding:44px 0 }
   .masterchef-photo { max-width:720px; width:100%; margin:auto }
 }
+
+/* Client photos mapped by Drive folder and filename. */
+.about-image-main,.about-image-secondary { height:auto }
+.solution-image {
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:16/10;
+  object-fit:cover;
+  border-radius:12px;
+  margin-bottom:20px
+}
+.history-detail-image {
+  display:block;
+  width:min(100%,360px);
+  height:auto;
+  border-radius:16px;
+  margin:24px auto
+}
+.masterchef-photo .masterchef-extra {
+  display:flex;
+  align-items:center;
+  gap:18px;
+  margin-top:22px;
+  box-shadow:none;
+  color:#e0e1f3;
+  text-decoration:none;
+  font-size:13px;
+  line-height:1.6
+}
+.masterchef-extra img {
+  width:35%;
+  height:auto;
+  border-radius:10px
+}
+.masterchef-extra:hover span { text-decoration:underline }
+@media(max-width:768px) {
+  .about-image-secondary {
+    display:block;
+    position:static;
+    width:100%;
+    margin-top:18px;
+    border:0
+  }
+}
+
+.hero-media.client-support { min-height:0; align-self:center }
+.hero-media.client-support img { display:block; min-height:0; height:auto }
